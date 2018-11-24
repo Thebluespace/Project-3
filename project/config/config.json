@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "myzxbwaejprk9z6x",
+    "password": "lnypunre0ijkzrwx",
+    "database": "ekcnzx2os6trrscc",
+    "host": "u28rhuskh0x5paau.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "port": "3306"
+  }
+}
