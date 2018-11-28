@@ -2,7 +2,7 @@ import React from "react";
 import "./Search.css";
 
 const Search = props => (
-  <div className="hero-body has-text-centered">
+  <div id="search" className="hero-body has-text-centered">
       <div className="columns is-mobile is-centered">
         <div className="column is-half is-narrow">
           <div className="field has-addons">

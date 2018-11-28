@@ -1,4 +1,4 @@
-section {
+#hero {
     background: url("./images/architecture-buildings-city-137611.jpg");
     height: 250px;
     background-position: center;
@@ -15,6 +15,9 @@ section {
     border-bottom-color: red;  */
     box-shadow: 0 0 30px rgb(77, 25, 25);
 
+}
+.hero-body {
+    margin-top: 0;
 }
 h1 {
     font-family: 'Shrikhand', cursive;
