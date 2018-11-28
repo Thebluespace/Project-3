@@ -5,6 +5,7 @@ import Header from './components/Header/Header.js';
 import Wrapper from './components/Wrapper/Wrapper.js';
 import Search from "./components/Search/Search.js";
 import Industry from "./components/Industry/Industry.js";
+import Footer from "./components/Footer/Footer.js";
 
 class App extends Component {
 
@@ -21,8 +22,11 @@ class App extends Component {
             <Industry />
           </div>
         </Wrapper>
-      </div>
 
+        <Footer />
+      </div>
+      
+      
     );
   }
 }

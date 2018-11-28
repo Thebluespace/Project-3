@@ -3,7 +3,7 @@ import "./Header.css";
 
 const Header = props => (
 
-    <section className="hero is-primary">
+    <section id="hero" className="hero is-primary">
         <div>
             <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
