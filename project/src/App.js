@@ -13,14 +13,14 @@ class App extends Component {
     return (
       <div>
         <Header />
-        {/* <Wrapper> */}
         <div className="columns">
           <Search />
         </div>
-        <div className="columns">
-          <Industry />
-        </div>
-        {/* </Wrapper> */}
+        <Wrapper>
+          <div className="columns">
+            <Industry />
+          </div>
+        </Wrapper>
       </div>
 
     );
