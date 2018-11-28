@@ -16,3 +16,19 @@ section {
     box-shadow: 0 0 30px rgb(77, 25, 25);
 
 }
+h1 {
+    font-family: 'Shrikhand', cursive;
+}
+i {
+    font-size: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+button{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+button:active{
+    border: none;
+}
