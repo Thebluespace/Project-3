@@ -8,13 +8,9 @@ const PORT = process.env.PORT || 3001;
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-var passport = require('passport');
-var session = require('express-session');
 var env = require('dotenv').load();
 // Add routes, both API and view
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret 
-//app.use(passport.initialize());
-//app.use(passport.session());
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
 //app.use(routes);
 // Start the API server
 app.listen(PORT, function() {
