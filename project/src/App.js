@@ -14,20 +14,20 @@ class App extends Component {
 
   render() {
     return (
-      <Results />
-    //   <div>
-    //     <Header />
-    //     <div className="columns">
-    //       <Search />
-    //     </div>
-    //     <Wrapper>
-    //       <div className="columns">
-    //         <Industry />
-    //       </div>
-    //     </Wrapper>
+      // <Results />
+      <div>
+        <Header />
+        <div className="columns">
+          <Search />
+        </div>
+        <Wrapper>
+          <div className="columns">
+            <Industry />
+          </div>
+        </Wrapper>
 
-    //     <Footer />
-    //   </div>
+        <Footer />
+      </div>
       
       
     );
