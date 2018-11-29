@@ -5,6 +5,7 @@ import Header from './components/Header/Header.js';
 import Wrapper from './components/Wrapper/Wrapper.js';
 import Search from "./components/Search/Search.js";
 import Industry from "./components/Industry/Industry.js";
+import Footer from "./components/Footer/Footer.js";
 
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -26,16 +27,19 @@ class App extends Component {
     return (
       <div>
         <Header />
-        {/* <Wrapper> */}
         <div className="columns">
           <Search />
         </div>
-        <div className="columns">
-          <Industry />
-        </div>
-        {/* </Wrapper> */}
-      </div>
+        <Wrapper>
+          <div className="columns">
+            <Industry />
+          </div>
+        </Wrapper>
 
+        <Footer />
+      </div>
+      
+      
     );
   }
 }
