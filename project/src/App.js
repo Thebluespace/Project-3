@@ -6,6 +6,19 @@ import Wrapper from './components/Wrapper/Wrapper.js';
 import Search from "./components/Search/Search.js";
 import Industry from "./components/Industry/Industry.js";
 
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+const App = ({ user }) => (
+  <BrowserRouter>
+    <Switch>
+      {hasRole(user, ['user']) && <Route path='/user' component={User} />}
+      {hasRole(user, ['admin']) && <Route path='/admin' component={Admin} />}
+      <Route exact path='/' component={Home} />
+    </Switch>
+  </BrowserRouter>
+);
+
 class App extends Component {
 
 
