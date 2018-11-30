@@ -1,5 +1,5 @@
 #hero {
-    background: url("./images/architecture-buildings-city-137611.jpg");
+    background: url("./images/architecture-buildings-city-1376112.jpg");
     height: 250px;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,6 +21,7 @@
 }
 h1 {
     font-family: 'Shrikhand', cursive;
+    letter-spacing: 10px;
 }
 i {
     font-size: 30px;
