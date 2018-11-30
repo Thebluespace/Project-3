@@ -2,6 +2,12 @@
     background-color:#F21D10;
 }
 
+#btn-info:hover{
+    box-shadow: 1px 1px 10px;
+    color:white;
+
+}
+
 .input {
     /* border: #F21D10; */
     box-shadow: 0 0 30px black;
@@ -14,3 +20,4 @@
 #search {
     margin-top: 70px;
 }
+
