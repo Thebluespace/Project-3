@@ -16,18 +16,13 @@ import Industry from "./components/Industry/Industry.js";
     const App = () => (
     <Router>
       <div>
-        <Header />
+        {/* <Header /> */}
           {/* <Search/>
           <Wrapper><Industry/></Wrapper> */}
+                  {/* <Search />
+                  <Wrapper><div className="columns"><Industry /></div></Wrapper> */}
 
-                  <div className="columns">
-                    <Search />
-                  </div>
-                  <Wrapper>
-                    <div className="columns">
-                      <Industry />
-                    </div>
-                  </Wrapper>
+                  <Login/>
 
           <Switch>
             <Route exact path="/Home" Component={Home}/>
