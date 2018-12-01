@@ -23,6 +23,19 @@ module.exports = function(sequelize, Sequelize) {
         password: {
             type: Sequelize.STRING,
             allowNull: false
+        },
+
+        isLoggedIn: {
+            type: Sequelize.BOOLEAN,
+            allowNull: false
+        },
+        lastLogIn: {
+            type: Sequelize.DATE,
+            allowNull: false
+        },
+        expires: {
+            type: Sequelize.DATE,
+            allowNull: false
         }
     });
     return User; 
