@@ -3,7 +3,7 @@ import "./Search.css";
 
      const Search = () => {
        return (
-      <div className="columns">
+      
         <div id="search" className="hero-body has-text-centered">
             <div className="columns is-mobile is-centered">
               <div className="column is-half is-narrow">
@@ -20,7 +20,6 @@ import "./Search.css";
               </div>
             </div>
         </div>
-      </div>
        )
      };
 export default Search;

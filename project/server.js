@@ -8,7 +8,9 @@ const PORT = process.env.PORT || 3001;
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("client/build"));
+if (process.env.NODE_ENV === "production") {
+  app.use("/static",express.static("client/build/static"));
+};
 app.use(routes);
 // Start the API server
 
@@ -18,7 +20,5 @@ app.use(routes);
 // });
 
 app.listen(PORT, function() {
-  console.log(
-    "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-    PORT,PORT);
+  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",PORT,PORT);
 });

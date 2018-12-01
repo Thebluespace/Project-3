@@ -9,17 +9,18 @@ class SearchResultContainer extends Component {
         placesResults: []
     }
     
-    Yeet = () => {
+    Yeet = props => {
+        return (<div className="wrapper">{props.children}</div>)
         if(this.state.placeResults.length === 0) {
-            return <div><Search/><Industry/></div>
+            return (<div><Search/><Industry/></div>)
         } else {
             //return <DisplayResults results={this.state.placesResults} />;
-            return <div><Search/><Industry/></div>
+            return (<div><Search/><Industry/></div>)
         }   
     };
 
     render() {
-        return (<div><Search/><Industry/></div>);
+        return (this.Yeet);
     };
 }
 export default SearchResultContainer;

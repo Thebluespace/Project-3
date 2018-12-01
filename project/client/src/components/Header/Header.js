@@ -21,8 +21,6 @@ const Header = props => (
                 </div>
             </nav>
         </div>
-
-// comment
         <div className="hero-body">
             <div className="container">
                 <h1 className="title">

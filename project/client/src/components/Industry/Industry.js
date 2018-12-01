@@ -3,7 +3,8 @@ import "./Industry.css";
 
 const Industry = () => {
     return (
-        // <div className="tile is-ancestor">
+    <div className="columns">
+        {/* // <div className="tile is-ancestor">
         //     <div className="tile is-2 is-vertical is-parent is-2">
         //         <div className="tile is-child is-primary box">
         //             <p className="title">One</p>
@@ -17,7 +18,7 @@ const Industry = () => {
         //             <p className="title">Three</p>
         //         </div>
         //     </div>
-        // </div>
+        // </div> */}
         <div id="industry">
             <div className="tile is-ancestor">
                 
@@ -74,6 +75,7 @@ const Industry = () => {
                 </div>
             </div>
         </div>
+    </div>
     )            
 };
             
