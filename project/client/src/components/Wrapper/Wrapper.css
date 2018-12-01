@@ -1,0 +1,23 @@
+.wrapper {
+    /* padding-top: 50px; */
+    /* background: #000; */
+    /* background: url("../css/images/the_moon_kingdom_castle__1992_anime__by_moon_shadow_1985-d5lizfj.jpg"); */
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    /* padding: 20px; */
+    justify-content: space-around;
+    align-content: flex-start;
+    resize: both;
+    /* overflow: auto; */
+    width: 100%;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* background-size: 100% 100%; */
+    
+  }
+  
+/* body {
+  background-image: url("/the-memory-game/public/assets/css/images/tumblr_ncszkhoL6M1s1odqho1_640");
+} */
