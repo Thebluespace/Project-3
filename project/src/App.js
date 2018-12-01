@@ -11,6 +11,19 @@ import Login from "./components/Login/Login.js";
 import Results from "./components/Results/Results.js";
 import Reviews from "./components/Reviews/Reviews.js";
 
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+const App = ({ user }) => (
+  <BrowserRouter>
+    <Switch>
+      {hasRole(user, ['user']) && <Route path='/user' component={User} />}
+      {hasRole(user, ['admin']) && <Route path='/admin' component={Admin} />}
+      <Route exact path='/' component={Home} />
+    </Switch>
+  </BrowserRouter>
+);
+
 class App extends Component {
 
 
