@@ -8,12 +8,17 @@ class Home extends Component {
         return (
             <div className="columns">
                 <Search/>
-                <Wrapper><Industry/></Wrapper>
+                {/* <Wrapper><Industry/></Wrapper> */}
             </div>
         );
     }
     render() {
-        return (this.Home);
+        return (
+        <div>
+                <Search/>
+                <Wrapper><Industry/></Wrapper>
+        </div>
+        );
     }
 }
 export default Home;
