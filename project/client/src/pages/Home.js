@@ -1,22 +1,20 @@
 import React, { Component } from "react";
+import Header from '../components/Header/Header.js';
+import Footer from "../components/Footer/Footer.js";
 import Wrapper from '../components/Wrapper/Wrapper.js';
 import Search from "../components/Search/Search.js";
 import Industry from "../components/Industry/Industry.js";
 
 class Home extends Component {
-    Home = props => {
-        return (
-            <div className="columns">
-                <Search/>
-                {/* <Wrapper><Industry/></Wrapper> */}
-            </div>
-        );
-    }
     render() {
         return (
         <div>
+            <Header/>
                 <Search/>
-                <Wrapper><Industry/></Wrapper>
+                <div id="columns">
+                    <Industry/>
+                </div>
+            <Footer/>
         </div>
         );
     }

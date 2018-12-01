@@ -11,11 +11,9 @@ export default {
     },
     details: function(res) {
         res.candidates.forEach(element => {
-           var uri = "apiuri" + element.place_id ;
-           axios.get(GOOGLEDETAILS + element.place_id + APIKEY,(res) => {
-               this.details(res);
-           });
+            axios.get(GOOGLEDETAILS + element.place_id + APIKEY,(res) => {
+                this.details(res);
+            });
         });
     }
 };
-
