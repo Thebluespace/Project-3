@@ -4,6 +4,14 @@ const GOOGLEPLACES = "https://maps.googleapis.com/maps/api/place/findplacefromte
 const APIKEY = "&key=AIzaSyBipENZtBfYDZlYlK0kFEMrpPWONITf9E4";
 const GOOGLEDETAILS = "https://maps.googleapis.com/maps/api/place/details/json?placeid="
 
+function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
+
 function placesCall(query,location) {
     try {
         var reviews = new Promise(function(resolve,reject){
@@ -15,9 +23,12 @@ function placesCall(query,location) {
                             try {
                             //console.log(data2);
                             element.reviews = [];
-                            data2.data.result.reviews.forEach(review => {
-                                element.reviews.push(review);
-                            });
+                            console.log(data2.data);
+                            if (!isEmpty(data2.data.result)){
+                                data2.data.result.reviews.forEach(review => {
+                                    element.reviews.push(review);
+                                });
+                            }
                              reviews2.push(element);
                              if (num === data.data.candidates.length -1 ){
                                 resolve(reviews2);
