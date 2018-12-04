@@ -12,7 +12,7 @@ import "./Search.css";
                       <input className="input" type="text" placeholder="Find a business"/>
                     </div>
                     <div className="control">
-                      <button className="button is-info" id="btn-info">
+                      <button className="button is-info" id="btn-info" style={{border: "none"}}>
                         Search
                       </button>
                     </div>

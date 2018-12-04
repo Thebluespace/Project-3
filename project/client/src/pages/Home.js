@@ -12,7 +12,7 @@ class Home extends Component {
             
             <Header/>
                 <Search/>
-                <div id="columns">
+                <div className="wrapper" id="columns">
                     <Industry/>
                 </div>
             <Footer/>
