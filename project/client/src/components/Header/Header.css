@@ -52,7 +52,11 @@ button {
     color: white;
 }
 button:active{
-    border-style: none;
-    border-color: transparent;
-    border:none;
+    border: none;
 }
+
+
+
+
+
+
