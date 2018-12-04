@@ -34,5 +34,7 @@ button{
     color: white;
 }
 button:active{
-    border: none;
+    border-style: none;
+    border-color: transparent;
+    border:none;
 }

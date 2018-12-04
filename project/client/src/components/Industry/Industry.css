@@ -7,3 +7,35 @@
 #industry {
     margin-top: 40px;
 }
+
+#auto {
+    background-image: url("./images/auto-industry.png");
+}
+
+#food {
+    background-image: url("./images/food.png");
+}
+
+#retail {
+    background-image: url("./images/retail.png");
+}
+
+#health {
+    background-image: url("./images/health.png");
+}
+
+#services {
+    background-image: url("./images/services.png");
+}
+
+#hotels {
+    background-image: url("./images/hotel-light-low-angle-shot-96444.png");
+}
+
+#shop {
+    background-image: url("./images/shopping.png");
+}
+
+#entertainment {
+    background-image: url("./images/audience-band-bright-1047442.png");
+}

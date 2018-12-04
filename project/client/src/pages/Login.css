@@ -1,4 +1,13 @@
- .login {
+h1 {
+    font-family: 'Shrikhand', cursive;
+    letter-spacing: 10px;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 50px;
+}
+
+.login {
     padding:100px;
     font-family: Comfortaa, cursive;
     border-radius:9px;
@@ -13,11 +22,10 @@
     margin-left:50px;
     margin-right:50px;
     
-
-    
-
    
 }
+
+
 
 .notification {
   background: none !important; 
@@ -56,7 +64,8 @@
 }
 
 .input{
-
+    background-color: transparent;
+    color: whitesmoke;
 }
 
 #signinform {
