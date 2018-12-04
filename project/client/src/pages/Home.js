@@ -9,6 +9,7 @@ class Home extends Component {
     render() {
         return (
         <div>
+            
             <Header/>
                 <Search/>
                 <div id="columns">

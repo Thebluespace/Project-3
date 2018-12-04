@@ -17,13 +17,19 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
-    "nodemon": "^1.11.0"
+    "css-loader": "^1.0.1",
+    "nodemon": "^1.11.0",
+    "style-loader": "^0.23.1"
   },
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "if-env": "^1.0.4",
     "mongoose": "^5.0.17",
-    "if-env": "^1.0.4"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "redux": "^4.0.1",
+    "video-react": "^0.13.1"
   }
 }

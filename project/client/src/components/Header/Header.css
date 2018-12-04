@@ -10,25 +10,43 @@
     text-align: center;
 }
 
+
 .hero {
     /* border-bottom: 50px;
     border-bottom-color: red;  */
-    box-shadow: 0 0 30px rgb(77, 25, 25);
-
+      box-shadow: 0 0 30px rgb(77, 25, 25);   
 }
+
 .hero-body {
     margin-top: 0;
+    
 }
+
 h1 {
     font-family: 'Shrikhand', cursive;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
 }
+
+.title {
+    font-size:50px;  
+    text-shadow: 12px 0px 15px rgb(14, 1, 1);
+}
+
 i {
-    font-size: 30px;
+    padding:5px;
+    font-size: 45px;
     margin-left: 10px;
     cursor: pointer;
+    text-shadow: 5px 5px 20px black;
 }
-button{
+
+i:hover {
+    color:white;
+    text-shadow: 1px 1px 10px rgb(218, 9, 9);
+
+}
+
+button {
     background-color: transparent;
     border: none;
     color: white;
