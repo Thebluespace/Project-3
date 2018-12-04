@@ -65,7 +65,7 @@ h1 {
 
 .input{
     background-color: transparent;
-    color: whitesmoke;
+    /* color: whitesmoke; */
 }
 
 #signinform {
