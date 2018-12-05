@@ -3,6 +3,7 @@ const router = require("express").Router();
 const apiRoutes = require("./api");
 
 function isLoggedIn(req, res, next) {
+  console.log(req);
   if (req.isAuthenticated())
     return next();
   res.redirect('/');
