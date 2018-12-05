@@ -25,18 +25,23 @@ module.exports = function(sequelize, Sequelize) {
             allowNull: false
         },
 
-        isLoggedIn: {
-            type: Sequelize.BOOLEAN,
-            allowNull: false
+        location: {
+            type: Sequelize.GEOMETRY("POINT"),
+            allowNull: true
         },
-        lastLogIn: {
-            type: Sequelize.DATE,
-            allowNull: false
+ 
+        last_login: {
+            type: Sequelize.DATE
         },
-        expires: {
-            type: Sequelize.DATE,
-            allowNull: false
+ 
+        status: {
+            type: Sequelize.ENUM('active', 'inactive'),
+            defaultValue: 'active'
         }
+ 
+ 
     });
-    return User; 
+ 
+    return User;
+ 
 }
