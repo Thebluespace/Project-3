@@ -4,13 +4,18 @@ import { hasRole, isAllowed } from './config/alligator';
 import './App.css';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import User from "./components/User"
+
+
 
     const App = () => (
     <Router>
       <div>
           <Switch>
             <Route exact path="/home" component={Home}/>
+            <Route exacts path="/signup" component={User}/>
             <Route path="/" component={Login}/>
+            
             {/* {hasRole(user, ["user"]) && <Route exact path="/" Component={<Wrapper/>}/>} */}
             {/* {!hasRole(user, ["user"]) && <Route path="/" Component={<UserLogin/>}/>}  */}
           </Switch>

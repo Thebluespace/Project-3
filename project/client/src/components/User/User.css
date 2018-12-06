@@ -1,0 +1,18 @@
+.field{
+    background: none !important;
+    box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    float:center;
+    position:relatiive;
+}
+
+.button{
+    width:220%;
+    position:relative;
+}
+
+.fas fa-envelope fa-2x{
+    size:10px;
+}
+
