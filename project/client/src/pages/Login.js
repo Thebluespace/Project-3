@@ -1,9 +1,33 @@
 import React, { Component } from "react";
+import API from "../../utils/API";
 import "./Login.css";
 // import Login from "../components/Login/Login.js";
 
 
 class Login extends Component {
+
+    state = {
+        email: "",
+        password: "",
+        location: ""
+    }
+    handleInputChange = event => {
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({
+          [name]: value
+        });
+    };
+    handleLogin = event => {
+        event.preventDefault();
+        if (this.state.title && this.state.author) {
+        API.Login({
+            email: this.state.email,
+            password: this.state.password,
+            location: this.state.location
+        }).catch(err => console.log(err));
+        }
+    }
     
     render() {
         return (

@@ -4,6 +4,7 @@ import Header from "../components/Header/Header.js";
 import "./Results.css";
 
 class Results extends Component {
+    
     render() {
         return (
             <div>
