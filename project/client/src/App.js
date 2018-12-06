@@ -10,8 +10,8 @@ import Results from "./pages/Results";
     <Router>
       <div>
           <Switch>
-            <Route exact path="/home" component={Results}/>
-            <Route path="/" component={Login}/>
+            <Route exact path="/home" component={Home}/>
+            <Route path="/" component={Results}/>
             {/* {hasRole(user, ["user"]) && <Route exact path="/" Component={<Wrapper/>}/>} */}
             {/* {!hasRole(user, ["user"]) && <Route path="/" Component={<UserLogin/>}/>}  */}
           </Switch>

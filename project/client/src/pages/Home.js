@@ -19,13 +19,7 @@ class Home extends Component {
     render() {
         return (
         <div>
-            <video id="background-video" loop autoPlay>
-                <source src={this.state.videoURL} type="video/mp4" />
-                <source src={this.state.videoURL} type="video/ogg" />
-                Your browser does not support the video tag.
-            </video>
-        
-
+    
             <Header />
             <Search />
             <div className="wrapper" id="columns">
