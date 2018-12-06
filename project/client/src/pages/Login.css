@@ -20,12 +20,8 @@ h1 {
     position:flex;
     height:400px;
     margin-left:50px;
-    margin-right:50px;
-    
-   
+    margin-right:50px;  
 }
-
-
 
 .notification {
   background: none !important; 
@@ -39,9 +35,6 @@ h1 {
 
 .button.is-primary {
     background-color: hsl(10, 95%, 49%);
-
-
-
 }
 
 .button.is-primary:hover {
@@ -54,25 +47,22 @@ h1 {
   
 }
 
-
 .label {
-    color:white;
     font-size:30px;
     float:auto;
-
-
 }
 
 .input{
     background-color: transparent;
-    color: whitesmoke;
+    color:whitesmoke;
+    color:black;
+
 }
 
 #signinform {
     padding:0px;
     text-align:center;
     margin-top:-85px;
-   
 }
 
 /* #email,  #password {
@@ -94,20 +84,17 @@ h1 {
 #password {
     text-align:left;
 } */
-
+.field{
+    width:100%;
+}
 
 .loginbtn{
     border-radius:2px;
     border-color:red;
-    box-shadow: 1px 1px 1px  hsl(10, 14%, 83%);
-     
+    box-shadow: 1px 1px 1px  hsl(10, 14%, 83%);  
 }
 
-
-
-
-
-#myVideo {
+#video-background {
     /*  making the video fullscreen  */
       position: fixed;
       left:0;
@@ -139,7 +126,6 @@ h1 {
   and (min-resolution: 192dpi) {
   
   .login {
-
     margin-left:-50px;
     margin-right:50px;
   }

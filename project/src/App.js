@@ -8,6 +8,9 @@ import Industry from "./components/Industry/Industry.js";
 import Footer from "./components/Footer/Footer.js";
 import Results from "./components/Results/Results.js";
 import Reviews from "./components/Reviews/Reviews.js";
+import Logon from "./components/Logon/Logon.js";
+
+
 
 class App extends Component {
 

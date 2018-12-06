@@ -1,4 +1,3 @@
-
 import React from "react";
 import "./User.css";
 
@@ -9,7 +8,8 @@ const User = props => (
         <video autoplay loop id="video-background" muted plays-inline>
             <source src="https://player.vimeo.com/external/287831458.sd.mp4?s=ea1c5ae2328fb88b03335bd198970d9736c271e7profile_id=165" type="video/mp4" />
         </video>
-        <h1>Who's Bad</h1>
+
+        <h1>WHO'S BAD?</h1>
 
         <div className="login">
             <div className="container">
@@ -33,19 +33,26 @@ const User = props => (
                             </span>
                         </p>
                     </div>
-                    <div className="loginbtn" />
+
+                    <div className="field">
+                        <p className="control has-icons-left">
+                            <input className="input" type=" phone number" placeholder="Phone Number" />
+                            <span className="icon is-small is-left">
+                            </span>
+                        </p>
+                    </div>
+                    <div className="signUpbtn" />
                     <div className="field is-grouped">
                         <p className="control">
                             <a className="button is-primary">
-                                Login</a>
+                                Submit</a>
                         </p>
-                        <div className="signUpbtn" />
-                        <p className="control"><a className="button is-light">Sign Up</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 );
 
 export default User;
