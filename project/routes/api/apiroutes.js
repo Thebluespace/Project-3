@@ -96,36 +96,36 @@ router.post('/signup', (req, res) => {
         }
       }
     })(req, res)
-  });
+});
   
-  router.get('/logout',(req,res) => {
+router.get('/logout',(req,res) => {
     req.session.destroy(function(err) {
-      res.redirect('/');
+        res.redirect('/');
     });
-  });
+});
   
-  router.post('/signin', (req, res) => {
-    console.log(req.body);
-    passport.authenticate('local-signin', (err, user, info) => {
-      console.log(info);
-      if (err) {
-        console.log(err);
-        return res.json({ error: err.message });
-      } else {
-        if (!user) {
-          return res.send({ error: info.message });
-        } else {
-          req.login(user, err => {
-            if (err) {
-              console.log(err);
-              return res.json({ error: err.message });
-            }
-            console.log("successful sign-in");
-            res.json({ redirect: "/home" });
-          });
+router.post('/signin', (req, res) => {
+console.log(req.body);
+passport.authenticate('local-signin', (err, user, info) => {
+    console.log(info);
+    if (err) {
+    console.log(err);
+    return res.json({ error: err.message });
+    } else {
+    if (!user) {
+        return res.send({ error: info.message });
+    } else {
+        req.login(user, err => {
+        if (err) {
+            console.log(err);
+            return res.json({ error: err.message });
         }
-      }
-    })(req, res)
-  });
+        console.log("successful sign-in");
+        res.json({ redirect: "/home" });
+        });
+    }
+    }
+})(req, res)
+});
 
 module.exports = router;

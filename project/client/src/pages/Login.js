@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../utils/API";
 import "./Login.css";
 class Login extends Component {
     state = {
@@ -13,11 +14,16 @@ class Login extends Component {
           [name]: value
         });
     };
-
-    login() {
-
+    handleLogin = event => {
+        event.preventDefault();
+        if (this.state.title && this.state.author) {
+        API.Login({
+            email: this.state.email,
+            password: this.state.password,
+            location: this.state.location
+        }).catch(err => console.log(err));
+        }
     }
-
     render() {
         return (
                 <div>
