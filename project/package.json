@@ -23,13 +23,14 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "bcrypt": "^3.0.2",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "express-session": "^1.15.6",
     "if-env": "^1.0.4",
     "mongoose": "^5.0.17",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "redux": "^4.0.1",
-    "video-react": "^0.13.1"
+    "passport": "^0.4.0",
+    "sequelize": "^4.41.2"
   }
 }

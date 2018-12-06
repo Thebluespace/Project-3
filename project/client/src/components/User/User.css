@@ -7,12 +7,10 @@
     position:relatiive;
 }
 
-.button{
-    width:220%;
-    position:relative;
+#submit {
+    width:220%;;
 }
 
-.fas fa-envelope fa-2x{
-    size:10px;
-}
+
+
 

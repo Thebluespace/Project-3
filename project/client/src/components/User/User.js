@@ -18,10 +18,10 @@ const User = props => (
                         <p className="control has-icons-left has-icons-right">
                             <input className="input" type="  email" placeholder=" Email" />
                             <span className="icon is-small is-left">
-                                <i className="fas fa-envelope fa-2x"></i>
+                                <i className="fas fa-envelope fa-1x"></i>
                             </span>
                             <span className="icon is-small is-right">
-                                <i className="fas fa-check"></i>
+                                <i className="fas fa-check fa-2x"></i>
                             </span>
                         </p>
                     </div>
@@ -29,7 +29,7 @@ const User = props => (
                         <p className="control has-icons-left">
                             <input className="input" type=" password" placeholder=" Password" />
                             <span className="icon is-small is-left">
-                                <i className="fas fa-lock"></i>
+                                <i className="fas fa-lock fa-1x"></i>
                             </span>
                         </p>
                     </div>
@@ -43,8 +43,8 @@ const User = props => (
                     </div>
                     <div className="signUpbtn" />
                     <div className="field is-grouped">
-                        <p className="control">
-                            <a className="button is-primary">
+                        <p className="control id=signup">
+                            <a className="button is-primary"  id= "submit">
                                 Submit</a>
                         </p>
                     </div>
