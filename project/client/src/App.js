@@ -13,8 +13,8 @@ import User from "./components/User"
           <Switch>
             <Route exact path="/home" component={Home}/>
             <Route exacts path="/signup" component={User}/>
+            <Route path="/:id" component={Login}/>
             <Route path="/" component={Login}/>
-            
             {/* {hasRole(user, ["user"]) && <Route exact path="/" Component={<Wrapper/>}/>} */}
             {/* {!hasRole(user, ["user"]) && <Route path="/" Component={<UserLogin/>}/>}  */}
           </Switch>
