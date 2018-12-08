@@ -7,6 +7,18 @@
     position:relatiive;
 }
 
+.input {
+    color:white;
+}
+
+.title{
+    
+}
+
+*{
+color:white;
+}
+
 #submit {
     width:220%;;
 }
@@ -22,6 +34,8 @@
       height: auto;
       z-index: -100;
     }
+
+
     
 
 
