@@ -9,7 +9,7 @@ const Signin = props => (
                     <p className="control has-icons-left has-icons-right">
                         <input className="input" type="  email" placeholder=" Email" />
                         <span className="icon is-small is-left">
-                            <i className="fas fa-envelope"></i>
+                            <i className="fas fa-envelope fa-1px"></i>
                         </span>
                         <span className="icon is-small is-right">
                             <i className="fas fa-check"></i>
@@ -20,7 +20,7 @@ const Signin = props => (
                     <p className="control has-icons-left">
                         <input className="input" type=" password" placeholder=" Password" />
                         <span className="icon is-small is-left">
-                            <i className="fas fa-lock"></i>
+                            <i className="fas fa-lock fa-1px "></i>
                         </span>
                     </p>
                 </div>
