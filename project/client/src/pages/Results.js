@@ -10,28 +10,45 @@ class Results extends Component {
         return (
             <div>
                 <Header1 />
-                <div className="section">
+                <div className="section ">
                     <div className="container is-fluid level" id="container">
                         <div className="tile is-ancestor">
-                            <div className="tile is-vertical is-10">
+                            <div className="tile is-vertical is-10 is-offset-2">
                                 <div className="tile is-parent">
                                     <div className="tile is-child box">
-                                        <img src="https://fakeimg.pl/250x100/" />
-                                        <h4>Restaurant Name</h4>
-                                        <p>Address</p>
-                                        <span>Rating and number of reviews</span>
+                                        <figure>
+                                            <img src="https://fakeimg.pl/250x100/" />
+                                        </figure>
+                                        <div id="">
+                                            <h4>Restaurant Name</h4>
+                                            <p>Phone Number</p>
+                                            <p>Hours</p>
+                                            <p>Address</p>
+                                            <span>Rating and number of reviews</span>
+                                        </div>
+                                        
                                         <Collapsible trigger="View Comments">
-                                            <div className="container is-fluid">
+                                            <div className="container is-fluid" id="comment">
                                                 <div className="tile is-ancestor">
                                                     <div className="tile is-vertical">
-                                                        {/* <div className="tile is-parent is-vertical">
-                                    <div className="tile is-child box">
-                                    </div>
-                                    <div className="tile is-child box">
-                                    </div>
-                                </div> */}
-                                                        <div className="tile is-parent speech-bubble">
-                                                            <article className="tile is-child box comment" id="box">
+                                                        <div>
+                                                            <div className="tile is-parent" id="ind-reviews">
+                                                                <figure className="image is-70x70">
+                                                                    <img src="http://lorempixel.com/100/100/" className="is-rounded" alt="userpic" />
+                                                                </figure>
+                                                                <article className="tile is-child speech-bubble box comment">
+
+                                                                    <p>Username</p>
+                                                                    <p>rating</p>
+                                                                    <p>date et time</p>
+                                                                    <p>User comment</p>
+                                                                </article>
+                                                            </div></div>
+
+
+
+                                                        <div className="tile is-parent">
+                                                            <article className="tile is-child speech-bubble box comment">
                                                                 <p>User Pic</p>
                                                                 <p>Username</p>
                                                                 <p>rating</p>
@@ -40,7 +57,7 @@ class Results extends Component {
                                                             </article>
                                                         </div>
                                                         <div className="tile is-parent speech-bubble">
-                                                            <article className="tile is-child box comment" id="box">
+                                                            <article className="tile is-child  box comment">
                                                                 <p>User Pic</p>
                                                                 <p>Username</p>
                                                                 <p>rating</p>
@@ -48,17 +65,8 @@ class Results extends Component {
                                                                 <p>User comment</p>
                                                             </article>
                                                         </div>
-                                                        <div className="tile is-parent speech-bubble">
-                                                            <article className="tile is-child box comment" id="box">
-                                                                <p>User Pic</p>
-                                                                <p>Username</p>
-                                                                <p>rating</p>
-                                                                <p>date et time</p>
-                                                                <p>User comment</p>
-                                                            </article>
-                                                        </div>
-                                                        <div className="tile is-parent speech-bubble">
-                                                            <article className="tile is-child box comment" id="box">
+                                                        <div className="tile is-parent ">
+                                                            <article className="tile is-child box comment speech-bubble">
                                                                 <p>User Pic</p>
                                                                 <p>Username</p>
                                                                 <p>rating</p>

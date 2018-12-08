@@ -74,4 +74,58 @@ router.post("/query", (req,res) => {
     }
 });
 
+router.post('/signup', (req, res) => {
+    passport.authenticate('local-signup', (err, user, info) => {
+      console.log(req.body);
+      console.log(info);
+      if (err) {
+        console.log(err);
+        return res.json({ error: err.message });
+      } else {
+        if (!user) {
+          return res.send({ error: info.message });
+        } else {
+          req.login(user, err => {
+            if (err) {
+              console.log(err);
+              return res.json({ error: err.message });
+            }
+            console.log("account created successfully");
+            res.json({ redirect: "/home" });
+          });
+        }
+      }
+    })(req, res)
+});
+  
+router.get('/logout',(req,res) => {
+    req.session.destroy(function(err) {
+        res.redirect('/');
+    });
+});
+  
+router.post('/signin', (req, res) => {
+console.log(req.body);
+passport.authenticate('local-signin', (err, user, info) => {
+    console.log(info);
+    if (err) {
+    console.log(err);
+    return res.json({ error: err.message });
+    } else {
+    if (!user) {
+        return res.send({ error: info.message });
+    } else {
+        req.login(user, err => {
+        if (err) {
+            console.log(err);
+            return res.json({ error: err.message });
+        }
+        console.log("successful sign-in");
+        res.json({ redirect: "/home" });
+        });
+    }
+    }
+})(req, res)
+});
+
 module.exports = router;

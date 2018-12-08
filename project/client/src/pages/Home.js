@@ -19,6 +19,7 @@ class Home extends Component {
     render() {
         return (
         <div>
+<<<<<<< HEAD
     
             <Header />
             <Search />
@@ -26,6 +27,15 @@ class Home extends Component {
                 <Industry />
             </div>
             <Footer />
+=======
+            
+            <Header/>
+                <Search/>
+                <div className="wrapper" id="columns">
+                    <Industry/>
+                </div>
+            <Footer/>
+>>>>>>> ef32042e192936341d296d00bc1001cb9671ddf2
         </div>
         );
     }

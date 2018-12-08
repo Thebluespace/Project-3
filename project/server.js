@@ -22,14 +22,13 @@ app.use(routes);
 
 require("./config/passport.js")(passport, db.user);
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 // Start the API server
 
 // Starting the server, syncing our models ------------------------------------/
-// db.sequelize.sync(syncOptions).then(function() {
-  
-// });
-
-app.listen(PORT, function() {
-  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",PORT,PORT);
+db.sequelize.sync(syncOptions).then(function() {
+  app.listen(PORT, function() {
+    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",PORT,PORT);
+  });
 });
+
