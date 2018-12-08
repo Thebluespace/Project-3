@@ -29,8 +29,9 @@ const User = props => (
 
                 <div className="field">
                     <p className="control has-icons-left">
-                        <input className="input" type=" phone number" placeholder="Phone Number" />
+                        <input className="input" type=" phone number" placeholder=" Mobile" />
                         <span className="icon is-small is-left">
+                        <i className="fas fa-phone fa-1x"></i>
                         </span>
                     </p>
                 </div>
