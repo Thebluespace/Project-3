@@ -4,6 +4,8 @@ import './App.css';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import User from "./components/User"
+import Results from "./pages/Results"
+
 
 
 
@@ -11,7 +13,7 @@ import User from "./components/User"
     <Router>
       <div>
           <Switch>
-            <Route exact path="/home" component={Home}/>
+            <Route exact path="/home" component={Results}/>
             <Route exacts path="/signup" component={User}/>
             <Route path="/:id" component={Login}/>
             <Route path="/" component={Login}/>
