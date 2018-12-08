@@ -6,12 +6,13 @@ h1 {
     font-size: 50px;
     padding-top: 50px;
     text-shadow: 12px 0px 15px rgb(14, 1, 1);
-
 }
+input::placeholder {
+    color: red;
+  }
 
 .title{
     text-shadow: 12px 0px 15px rgb(14, 1, 1);
-
 }
 
 .login {
