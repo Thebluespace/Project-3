@@ -31,7 +31,9 @@ const Signin = props => (
                             Login</a>
                     </p>
                     <div className="signUpbtn" />
-                    <p className="control"><a className="button is-light">Sign Up</a></p>
+                    <p className="control">
+                        <a className="button is-light">Sign Up</a>
+                    </p>
                 </div>
             </div>
         </div>
