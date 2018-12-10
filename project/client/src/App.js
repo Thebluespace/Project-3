@@ -4,12 +4,14 @@ import './App.css';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import User from "./components/User"
+import Geo from "./components/Geolocation";
 
 
 
     const App = () => (
     <Router>
       <div>
+        <Geo/>
           <Switch>
             <Route exact path="/home" component={Home}/>
             <Route exacts path="/signup" component={User}/>

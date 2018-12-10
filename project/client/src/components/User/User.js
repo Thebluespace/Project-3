@@ -7,7 +7,7 @@ const User = props => (
         <div className="container">
             <div className="notification">
 
-            <video autoplay loop id="video-background" muted plays-inline>
+            <video AutoPlay loop id="video-background" muted plays-inline>
   <source src="https://player.vimeo.com/external/216332128.sd.mp4?s=a462069ddb1b3399d57b3f0577a2bd42d57acae3&profile_id=164" type="video/mp4" />
    
                 <div className="field">

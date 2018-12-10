@@ -6,10 +6,23 @@ import Search from "../components/Search/Search.js";
 import Industry from "../components/Industry/Industry.js";
 
 class Home extends Component {
+
+    state = {
+        reviews: [],
+        location: ""
+    }
+    handleInputChange = event => {
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({
+            [name]: value
+        });
+    };
+
     render() {
         return (
         <div>
-            
+
             <Header/>
                 <Search/>
                 <div className="wrapper" id="columns">

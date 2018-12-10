@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001;
 // Define middleware here
 var passport   = require('passport');
 var session    = require('express-session');
-var env = require('dotenv').load();
+// var env = require('dotenv').load();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 if (process.env.NODE_ENV === "production") {

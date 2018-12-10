@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const axios = require("axios");
-const GOOGLEPLACES = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?inputtype=textquery&fields=formatted_address,id,place_id,name,types,rating&input=";
-const APIKEY = "&key=AIzaSyBipENZtBfYDZlYlK0kFEMrpPWONITf9E4";
+const GOOGLEPLACES = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
+const APIKEY = "key=AIzaSyBipENZtBfYDZlYlK0kFEMrpPWONITf9E4";
 const GOOGLEDETAILS = "https://maps.googleapis.com/maps/api/place/details/json?placeid="
 
 function isEmpty(obj) {
@@ -15,33 +15,12 @@ function isEmpty(obj) {
 function placesCall(query,location) {
     try {
         var reviews = new Promise(function(resolve,reject){
-            axios.get(GOOGLEPLACES + query + APIKEY).then((data) => {
-                //console.log(data);
-                var reviews2 = [];
-                data.data.candidates.forEach((element,num) => {
-                        axios.get(GOOGLEDETAILS + element.place_id + "&fields=review" + APIKEY).then((data2) => {
-                            try {
-                            //console.log(data2);
-                            element.reviews = [];
-                            console.log(data2.data);
-                            if (!isEmpty(data2.data.result)){
-                                data2.data.result.reviews.forEach(review => {
-                                    element.reviews.push(review);
-                                });
-                            }
-                             reviews2.push(element);
-                             if (num === data.data.candidates.length -1 ){
-                                resolve(reviews2);
-                             }
-                             
-                            } catch (error) {
-                                console.log(error);
-                            }
-                        }).catch((error) => {            
-                            console.log(error);
-                            reviews2.push(element);
-                        });     
-                });
+            axios.get(GOOGLEPLACES + APIKEY + "&location=35.230705,-80.807955&radius=5000&keyword=" + query).then((data) => {
+                //console.log(data.data);
+                if (data.data.results.length < 1){
+                    resolve("No results found");
+                }
+                resolve(detailsCall(data.data,location));
             }).catch((error)=>{
                console.log(error);
                resolve({"error": error.message});
@@ -55,6 +34,37 @@ function placesCall(query,location) {
         console.log(error);
         return {"error": error.message};
     }
+}
+
+function detailsCall(data, location){
+    var reviews = new Promise(function(resolve,reject){
+        var reviews2 = [];
+        // console.log(data.results);
+        data.results.forEach((element) => {
+                axios.get(GOOGLEDETAILS + element.place_id + "&fields=review&" + APIKEY).then((data2) => {
+                    try {
+                            element.reviews = [];
+                            // console.log(data2.data);
+                            if (!isEmpty(data2.data.result)){
+                                data2.data.result.reviews.forEach(review => {
+                                    element.reviews.push(review);
+                                });
+                            }
+                            reviews2.push(element);
+                            if (data.results.length == reviews2.length){
+                                resolve(reviews2);
+                            }
+                        } catch (error) {
+                            console.log(error);
+                            reviews2.push(element);
+                        }
+                }).catch((error) => {            
+                    console.log(error);
+                    reviews2.push(element);
+                });     
+        });
+    });
+    return reviews;
 }
 
 router.post("/query", (req,res) => {
