@@ -4,12 +4,12 @@ h1 {
     color: whitesmoke;
     text-align: center;
     font-size: 50px;
-    padding-top: 50px;
+    /* padding-top: 50px; */
     text-shadow: 12px 0px 15px rgb(14, 1, 1);
 }
 input::placeholder {
     color: red;
-  }
+}
 
 .title{
     text-shadow: 12px 0px 15px rgb(14, 1, 1);
@@ -19,7 +19,7 @@ input::placeholder {
     padding:100px;
     font-family: Comfortaa, cursive;
     border-radius:9px;
-    margin-top:100px;
+    margin-top:70px;
     margin-bottom:175px;
     box-shadow: 1px 2px 4px 3px hsl(10, 14%, 83%);
     color:white;
@@ -62,7 +62,10 @@ input::placeholder {
 
 .input{
     background-color: transparent;
-    /* color: whitesmoke; */
+    outline-color: rgba(255, 255, 255, 0.301);
+    outline-width: .2px; 
+    outline-style: solid;
+    
 }
 
 #signinform {
@@ -93,12 +96,10 @@ input::placeholder {
 .field{
     width:100%;
 }
-
-.loginbtn{
-    border-radius:2px;
-    border-color:red;
-    box-shadow: 1px 1px 1px  hsl(10, 14%, 83%);  
+.is-grouped{
+    margin-left: 6px;
 }
+
 
 #video-background {
     /*  making the video fullscreen  */

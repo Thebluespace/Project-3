@@ -18,6 +18,9 @@
     box-shadow: 1px 1px 1px rgb(124, 121, 121);
    
 }
+#search-bar {
+  
+}
 .tile.is-child.box {
     box-shadow: 1px 1px 10px rgb(124, 121, 121);
 }
