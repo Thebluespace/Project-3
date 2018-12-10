@@ -3,16 +3,16 @@ import "./Signin.css";
 
 const Signin = props => (
     <div className="login">
-        <div className="container">
+        <div className="level">
             <div className="notification">
                 <div className="field">
                     <p className="control has-icons-left has-icons-right">
                         <input className="input" type="  email" placeholder=" Email" />
                         <span className="icon is-small is-left">
-                            <i className="fas fa-envelope fa-1px"></i>
+                            <i className="fas fa-envelope fa-1x"></i>
                         </span>
                         <span className="icon is-small is-right">
-                            <i className="fas fa-check"></i>
+                            <i className="fas fa-check fa-1x"></i>
                         </span>
                     </p>
                 </div>
@@ -20,7 +20,7 @@ const Signin = props => (
                     <p className="control has-icons-left">
                         <input className="input" type=" password" placeholder=" Password" />
                         <span className="icon is-small is-left">
-                            <i className="fas fa-lock fa-1px "></i>
+                            <i className="fas fa-lock fa-1x "></i>
                         </span>
                     </p>
                 </div>
@@ -31,7 +31,9 @@ const Signin = props => (
                             Login</a>
                     </p>
                     <div className="signUpbtn" />
-                    <p className="control"><a className="button is-light">Sign Up</a></p>
+                    <p className="control">
+                        <a className="button is-light">Sign Up</a>
+                    </p>
                 </div>
             </div>
         </div>

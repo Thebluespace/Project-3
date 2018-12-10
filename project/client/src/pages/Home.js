@@ -1,3 +1,4 @@
+"use strict";
 import React, { Component } from "react";
 import Header from '../components/Header/Header.js';
 import Footer from "../components/Footer/Footer.js";
@@ -7,6 +8,7 @@ import Industry from "../components/Industry/Industry.js";
 
 class Home extends Component {
 
+<<<<<<< HEAD
     state = {
         reviews: [],
         location: ""
@@ -18,6 +20,15 @@ class Home extends Component {
             [name]: value
         });
     };
+=======
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            videoURL: 'https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/2566/11/287831458/1087833265.mp4?token=1543892716-0x38e1b989c2ad4cf0c9466c033acbffa6ce001916'
+        }
+    }
+>>>>>>> ce11e651598c35639936d875b16694a9bdf4ec1d
 
     render() {
         return (

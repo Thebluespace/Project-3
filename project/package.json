@@ -30,10 +30,15 @@
     "express-session": "^1.15.6",
     "if-env": "^1.0.4",
     "mongoose": "^5.0.17",
+<<<<<<< HEAD
     "mysql2": "^1.6.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+=======
+    "passport": "^0.4.0",
+>>>>>>> ce11e651598c35639936d875b16694a9bdf4ec1d
     "react": "^16.6.3",
+    "react-collapsible": "^2.3.2",
     "react-dom": "^16.6.3",
     "redux": "^4.0.1",
     "sequelize": "^4.41.2",

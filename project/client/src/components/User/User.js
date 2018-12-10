@@ -6,10 +6,13 @@ const User = props => (
     <div className="login">
         <div className="container">
             <div className="notification">
+<<<<<<< HEAD
 
             <video AutoPlay loop id="video-background" muted plays-inline>
   <source src="https://player.vimeo.com/external/216332128.sd.mp4?s=a462069ddb1b3399d57b3f0577a2bd42d57acae3&profile_id=164" type="video/mp4" />
    
+=======
+>>>>>>> ce11e651598c35639936d875b16694a9bdf4ec1d
                 <div className="field">
                     <p className="control has-icons-left has-icons-right">
                         <input className="input" type="  email" placeholder=" Email" />
@@ -20,8 +23,7 @@ const User = props => (
                             <i className="fas fa-check fa-2x"></i>
                         </span>
                     </p>
-                </div>
-                </video>
+                </div>  
 
                 <div className="field">
                     <p className="control has-icons-left">
@@ -34,8 +36,9 @@ const User = props => (
 
                 <div className="field">
                     <p className="control has-icons-left">
-                        <input className="input" type=" phone number" placeholder="Phone Number" />
+                        <input className="input" type=" phone number" placeholder=" Mobile" />
                         <span className="icon is-small is-left">
+                        <i className="fas fa-phone fa-1x"></i>
                         </span>
                     </p>
                 </div>
@@ -44,7 +47,8 @@ const User = props => (
                 <div className="field is-grouped">
                     <p className="control id=signup">
                         <a className="button is-primary" id="submit">
-                            Submit</a>
+                            Submit
+                        </a>
                     </p>
                 </div>
             </div>

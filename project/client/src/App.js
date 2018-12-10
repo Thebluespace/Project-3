@@ -3,8 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+<<<<<<< HEAD
 import User from "./components/User"
 import Geo from "./components/Geolocation";
+=======
+import User from "./components/User";
+import Results from "./pages/Results";
+>>>>>>> ce11e651598c35639936d875b16694a9bdf4ec1d
 
 
 
