@@ -13,7 +13,8 @@ import Results from "./pages/Results"
     <Router>
       <div>
           <Switch>
-            <Route exact path="/home" component={Results}/>
+            <Route exact path="/Results" component={Results}/>
+            <Route exact path="/home" component={Home}/>
             <Route exacts path="/signup" component={User}/>
             <Route path="/:id" component={Login}/>
             <Route path="/" component={Login}/>
