@@ -9,7 +9,7 @@ import "./Search.css";
                 <div className="column is-half is-narrow">
                   <div className="field has-addons">
                     <div className="control is-expanded">
-                      <input className="input" type="text" placeholder="Find a business"/>
+                      <input className="input" type="text" placeholder="Find a business" id="search-bar"/>
                     </div>
                     <div className="control">
                       <button className="button is-info" id="btn-info" style={{border: "none"}}>

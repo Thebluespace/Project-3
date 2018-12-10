@@ -52,7 +52,11 @@ button {
     color: white;
 }
 button:active{
-    border: none;
+    border: none !important;
+    outline: none !important;
+}
+.navbar-menu {
+    float: right;
 }
 
 

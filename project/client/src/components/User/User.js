@@ -40,7 +40,8 @@ const User = props => (
                 <div className="field is-grouped">
                     <p className="control id=signup">
                         <a className="button is-primary" id="submit">
-                            Submit</a>
+                            Submit
+                        </a>
                     </p>
                 </div>
             </div>
