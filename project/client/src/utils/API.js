@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   query: function(post) {
-    return axios.post("/api/query",post);
+    return axios.post("/api/query",{"query":post});
   },
   signin: function(post) {
     return axios.post("/api/signin", post);
