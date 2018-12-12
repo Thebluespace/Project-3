@@ -4,7 +4,7 @@ import "./User.css";
 
 const User = props => (
     <div className="login">
-        <div className="container">
+        <div className="level">
             <div className="notification">
                 <div className="field">
                     <p className="control has-icons-left has-icons-right">
