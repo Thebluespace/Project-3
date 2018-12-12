@@ -11,6 +11,7 @@ import "./Search.css";
                     <div className="control is-expanded">
                       <input className="input" type="text" placeholder="Find a business" id="search-bar"/>
                     </div>
+                    <br/>
                     <div className="control">
                       <button className="button is-info" id="btn-info" style={{border: "none"}}>
                         Search
