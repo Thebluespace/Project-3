@@ -73,7 +73,7 @@ class Home extends Component {
                             <div className="field has-addons">
                                 <div className="control is-expanded"><input name="keyword" value={this.state.keyword} onChange={this.handleInputChange} className="input" type="text" placeholder="Find a business" id="search-bar"></input></div>
                                 <div className="control">
-                                <button onClick={this.handleSubmit} className="button is-info" id="btn-info" style={{border: "none"}}>Search</button>
+                                <a onClick={this.handleSubmit} className="button is-info" id="btn-info" style={{border: "none"}}>Search</a>
                                 </div>
                             </div>
                             </div>

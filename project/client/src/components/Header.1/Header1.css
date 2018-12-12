@@ -39,3 +39,8 @@ button:active{
     border-color: transparent;
     border:none;
 }
+#nav-btn-1 {
+    float: right !important;
+    padding-right: 2px;
+    text-shadow: blue;
+}

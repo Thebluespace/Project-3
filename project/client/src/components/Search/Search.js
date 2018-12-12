@@ -12,9 +12,7 @@ import "./Search.css";
                       <input name="keyword" onChange={this.props.change} className="input" type="text" placeholder="Find a business" id="search-bar"/>
                     </div>
                     <div className="control">
-                      <button onClick={this.props.submit} className="button is-info" id="btn-info" style={{border: "none"}}>
-                        Search
-                      </button>
+                      <a className="button is-info" id="btn-info" style={{border: "none"}}>Search</a>
                     </div>
                   </div>
                 </div>
