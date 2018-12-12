@@ -97,7 +97,7 @@
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
 
-    .notification {
+    /* .notification {
        margin-right:-600px;
        float:center;
        vertical-align: center;
@@ -107,7 +107,7 @@
      width:50%;
 
     }
-    
+     */
     
 }
 

@@ -12,9 +12,9 @@ import "./Search.css";
                       <input className="input" type="text" placeholder="Find a business" id="search-bar"/>
                     </div>
                     <div className="control">
-                      <button className="button is-info" id="btn-info" style={{border: "none"}}>
+                      <a className="button is-info" id="btn-info" style={{border: "none"}}>
                         Search
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
