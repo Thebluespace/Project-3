@@ -17,10 +17,18 @@ function placesCall(query,location) {
         var reviews = new Promise(function(resolve,reject){
             axios.get(GOOGLEPLACES + APIKEY + "&location=35.230705,-80.807955&radius=5000&keyword=" + query).then((data) => {
                 //console.log(data.data);
-                if (data.data.results.length < 1){
-                    resolve("No results found");
+                try {
+                    var sorted = data.data.results.filter(place => place.rating < 3);
+                    var sorted = sorted.filter(place => place.rating > 0);
+                    if (sorted.length < 1){
+                        resolve("No results found");
+                    }
+                    console.log(sorted);    
+                } catch (error) {
+                    console.log(error);
                 }
-                resolve(detailsCall(data.data,location));
+                
+                resolve(detailsCall(sorted,location));
             }).catch((error)=>{
                console.log(error);
                resolve({"error": error.message});
@@ -40,18 +48,23 @@ function detailsCall(data, location){
     var reviews = new Promise(function(resolve,reject){
         var reviews2 = [];
         // console.log(data.results);
-        data.results.forEach((element) => {
-                axios.get(GOOGLEDETAILS + element.place_id + "&fields=review&" + APIKEY).then((data2) => {
-                    try {
+        data.forEach((element) => {
+            if (element.photos){
+                element.photo = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=250&maxheight=100&photoreference=" + element.photos[0].photo_reference + "&" + APIKEY;
+            }else{
+                element.photo = "http://nebula.wsimg.com/649eff564042a5535ea47145eed01b78?AccessKeyId=531592D248B589D87A56&alloworigin=1&disposition=0"
+            }
+                axios.get(GOOGLEDETAILS + element.place_id + "&fields=review,formatted_phone_number&" + APIKEY).then((data2) => {
+                    try {   
+                            element.phone = data2.data.result.formatted_phone_number;
                             element.reviews = [];
-                            // console.log(data2.data);
-                            if (!isEmpty(data2.data.result)){
+                            if (!isEmpty(data2.data.result.reviews)){
                                 data2.data.result.reviews.forEach(review => {
                                     element.reviews.push(review);
                                 });
                             }
                             reviews2.push(element);
-                            if (data.results.length == reviews2.length){
+                            if (data.length == reviews2.length){
                                 resolve(reviews2);
                             }
                         } catch (error) {
@@ -72,10 +85,11 @@ router.post("/query", (req,res) => {
         console.log("Query made : ", req.body);
         var query = req.body.query;
         let reviews = new Promise((resolve,reject) => {
-            resolve(placesCall(query));
+            var data = placesCall(query);
+                resolve(data);
         });
         reviews.then(value =>{
-            console.log(value);
+            // console.log(value);
             res.json({"reviews": value});
         });
     } catch(error){

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Search.css";
 
-     const Search = () => {
+     const Search = props => {
        return (
         <div className="columns">
           <div id="search" className="hero-body has-text-centered">
@@ -9,10 +9,10 @@ import "./Search.css";
                 <div className="column is-half is-narrow">
                   <div className="field has-addons">
                     <div className="control is-expanded">
-                      <input className="input" type="text" placeholder="Find a business" id="search-bar"/>
+                      <input name="keyword" onChange={this.props.change} className="input" type="text" placeholder="Find a business" id="search-bar"/>
                     </div>
                     <div className="control">
-                      <button className="button is-info" id="btn-info" style={{border: "none"}}>
+                      <button onClick={this.props.submit} className="button is-info" id="btn-info" style={{border: "none"}}>
                         Search
                       </button>
                     </div>

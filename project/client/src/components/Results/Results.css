@@ -1,0 +1,81 @@
+.section {
+    /* background: rgb(241, 240, 240); */
+
+	/* background-blend-mode: darken;
+	background-color: rgb(86, 88, 194); */
+	
+	/* background: 
+    linear-gradient(purple 0%, red 90%), 
+    linear-gradient(to right, purple 0%, yellow 90%); */
+  /* background-blend-mode: screen; */
+}
+
+.Collapsible {
+	border-style: dotted;
+
+}
+
+.is-10 {
+    margin-left: 100px;
+}
+
+figure{
+    margin-right: 40px;
+    margin-top: 10px;
+
+}
+#info {
+	float: left;
+}
+.speech-bubble {
+	position: relative;
+	/* background: #24B5CB; */
+	
+    border-radius: 30px;
+    /* margin-bottom: 10px; */
+    margin-top: 30px;
+}
+
+.speech-bubble::after {
+    content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 24px solid transparent;
+	border-right-color: #24B5CB;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -12px;
+	margin-left: -24px;
+}
+
+.speech-bubble:nth-last-child(even) {
+	position: relative;
+	background: red;
+	border-radius: .4em;
+}
+
+article:nth-of-type(even)::after {
+    content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 24px solid transparent;
+	border-left-color: #ff0000;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -12px;
+	margin-right: -24px;
+}
+
+#container {
+    margin-top: 20px;
+}
+
+#comment{
+    margin-top: 50px;
+}

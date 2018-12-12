@@ -6,13 +6,6 @@ const User = props => (
     <div className="login">
         <div className="container">
             <div className="notification">
-<<<<<<< HEAD
-
-            <video AutoPlay loop id="video-background" muted plays-inline>
-  <source src="https://player.vimeo.com/external/216332128.sd.mp4?s=a462069ddb1b3399d57b3f0577a2bd42d57acae3&profile_id=164" type="video/mp4" />
-   
-=======
->>>>>>> ce11e651598c35639936d875b16694a9bdf4ec1d
                 <div className="field">
                     <p className="control has-icons-left has-icons-right">
                         <input className="input" type="  email" placeholder=" Email" />
