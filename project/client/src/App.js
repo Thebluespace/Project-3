@@ -3,9 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import User from "./components/User";
-import Geo from "react-geolocated";
-import passport from "passport";
 
 const App = () => (
   <Router>
