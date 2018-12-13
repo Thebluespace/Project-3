@@ -58,6 +58,9 @@ button:active{
 .navbar-menu {
     float: right;
 }
+#nav-btn {
+    float: right !important;
+}
 
 
 

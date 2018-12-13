@@ -13,9 +13,9 @@ import "./Search.css";
                     </div>
                     <br/>
                     <div className="control">
-                      <button className="button is-info" id="btn-info" style={{border: "none"}}>
+                      <a className="button is-info" id="btn-info" style={{border: "none"}}>
                         Search
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>

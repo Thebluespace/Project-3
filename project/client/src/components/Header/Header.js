@@ -18,6 +18,12 @@ const Header = props => (
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </button>
+
+
+                </div>
+                <div className="navbar-end" id="nav-btn">
+                    <a href="#"><i className="fas fa-sign-out-alt"></i></a>
+                    <a href="#"><i className="fas fa-home"></i></a>
                 </div>
             </nav>
         </div>
