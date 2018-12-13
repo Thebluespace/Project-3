@@ -3,25 +3,22 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import User from "./components/User"
-import Results from "./pages/Results"
+import User from "./components/User";
+import Geo from "react-geolocated";
+import passport from "passport";
 
-
-
-
-    const App = () => (
-    <Router>
-      <div>
-          <Switch>
-            <Route exact path="/Results" component={Results}/>
-            <Route exact path="/home" component={Home}/>
-            <Route exacts path="/signup" component={User}/>
-            <Route path="/:id" component={Login}/>
-            <Route path="/" component={Login}/>
-            {/* {hasRole(user, ["user"]) && <Route exact path="/" Component={<Wrapper/>}/>} */}
-            {/* {!hasRole(user, ["user"]) && <Route path="/" Component={<UserLogin/>}/>}  */}
-          </Switch>
-      </div>
-    </Router>
-    )
+const App = () => (
+  <Router>
+    <div>
+      {/* <Geo/> */}
+        <Switch>
+          <Route exact path="/home" component={Home}/>
+          <Route path="/:id" component={Login}/>
+          <Route path="/" component={Login}/>
+          {/* {hasRole(user, ["user"]) && <Route exact path="/" Component={<Wrapper/>}/>} */}
+          {/* {!hasRole(user, ["user"]) && <Route path="/" Component={<UserLogin/>}/>}  */}
+        </Switch>
+    </div>
+  </Router>
+)
 export default App;

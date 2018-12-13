@@ -5,26 +5,8 @@ const Industry = () => {
     return (
         <div id="industry">
             <div className="tile is-ancestor">
-                
 
-                        {/* // <div className="tile is-ancestor">
-        //     <div className="tile is-2 is-vertical is-parent is-2">
-        //         <div className="tile is-child is-primary box">
-        //             <p className="title">One</p>
-        //         </div>
-        //         <div className="tile is-child is-warning box">
-        //             <p className="title">Two</p>
-        //         </div>
-        //     </div>
-        //     <div className="tile is-parent is-2 is-info">
-        //         <div className="tile is-child box">
-        //             <p className="title">Three</p>
-        //         </div>
-        //     </div>
-        // </div> */}
-
-
-                <div className="tile is-parent">
+                <div className="tile is-parent"> 
                     <article className="tile is-child box" id="auto">
                     {/* <p className="title"></p> */}
                     {/* <p className="subtitle" >Auto</p> */}
