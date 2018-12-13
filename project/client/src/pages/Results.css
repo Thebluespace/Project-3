@@ -55,13 +55,11 @@ figure{
 	margin-left: -24px;
 	/* background: #cadbe7;
 	background-image: linear-gradient( #cadbe7, #edf3f7); */
-	
 }
 
 .speech-bubble:nth-last-child(even) {
 	position: relative;
 	background:none !important;
-
 }
 
 article:nth-of-type(even)::after {
@@ -121,11 +119,8 @@ article:nth-of-type(even)::after {
 	background-color: #fafafa;
 	border-radius: 8px;
 	box-shadow: 5px 1px 20px 8px rgb(70, 69, 69, 0.4) inset;
-
 	padding: 20px;
 }
-
-
 
 .Collapsible__trigger {
 	border:white;
