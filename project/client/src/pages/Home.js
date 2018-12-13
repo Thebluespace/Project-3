@@ -1,12 +1,11 @@
 "use strict";
 import React, { Component } from "react";
 import API from "../utils/API.js";
+import {geolocated} from 'react-geolocated';
 import Header from '../components/Header';
 import Footer from "../components/Footer";
 import Collapsible from "react-collapsible";
 import Results from "../components/Results";
-import Search from "../components/Search/Search";
-import Industry from "../components/Industry/Industry";
 
 class Home extends Component {
 
@@ -16,6 +15,17 @@ class Home extends Component {
         error: "",
         location: ""
     }
+    componentDidMount = () =>{
+        var error = localStorage.getItem("error");
+        var location = localStorage.getItem("location");
+        this.setState({"location":location,"error":error});
+    }
+    myCallback = data =>{
+        setTimeout(()=>{   
+        localStorage.setItem("error",data.error);
+        localStorage.setItem("location",data.Geo);
+        },1000)
+    };
     handleInputChange = event => {
         event.preventDefault();
         const name = event.target.name;
@@ -28,7 +38,10 @@ class Home extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.setState({"error": ""});
-        API.query(this.state.keyword).then(data =>{
+        if (this.state.location === "") {
+            return this.setState({"error":"No Location Available!"});
+        }
+        API.query(this.state.keyword,this.state.location).then(data =>{
             console.log(data.data.reviews);
             switch(data.data.reviews){
                 case "No results found":
@@ -47,7 +60,10 @@ class Home extends Component {
             "keyword": id,
             "error": ""
         }, () => {
-            API.query(this.state.keyword).then(data =>{
+            if (this.state.location === "") {
+                return this.setState({"error":"No Location Available!"});
+            }
+            API.query(this.state.keyword,this.state.location).then(data =>{
                 this.setState({ "reviews": data.data.reviews});
             });
         });
@@ -63,7 +79,7 @@ class Home extends Component {
     render() {
         return (
         <div>
-
+            {!this.props.isGeolocationAvailable ? this.myCallback({"Geo":"","error":"No Geolocation Available!"}) : !this.props.isGeolocationEnabled ? this.myCallback({"Geo":"","error":"Geolocation not enabled!"}) : this.props.coords ? this.myCallback({"Geo":this.props.coords.latitude + "," + this.props.coords.longitude,"error":""}) : this.myCallback({"Geo":"","error":"No Coords!"})}
             <Header/>
                
                 <div className="columns">
@@ -146,4 +162,9 @@ class Home extends Component {
         );
     }
 }
-export default Home;
+export default geolocated({
+    positionOptions: {
+      enableHighAccuracy: false,
+    },
+    userDecisionTimeout: 5000,
+  })(Home);
