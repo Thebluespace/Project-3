@@ -7,8 +7,13 @@ import Collapsible from "react-collapsible";
 import Results from "../components/Results";
 import Search from "../components/Search/Search";
 import Industry from "../components/Industry/Industry";
+<<<<<<< HEAD
 import "../components/Industry/Industry.css";
 // import "./Home.css";
+=======
+import  "../components/Industry/Industry.css";
+
+>>>>>>> cf18a44c962eded8f66baa5a83026eacf9ece2af
 
 class Home extends Component {
 

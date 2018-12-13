@@ -11,6 +11,7 @@ import "./Search.css";
                     <div className="control is-expanded">
                       <input name="keyword" onChange={this.props.change} className="input" type="text" placeholder="Find a business" id="search-bar"/>
                     </div>
+                    <br/>
                     <div className="control">
                       <a className="button is-info" id="btn-info" style={{border: "none"}}>Search</a>
                     </div>

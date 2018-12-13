@@ -13,7 +13,7 @@
     box-shadow: 0px 0px 0px;
 }
 
-input::placeholder{
+input::placeholder {
     color:white !important;
     opacity:0.9;
     font-family: Comfortaa, cursive;
@@ -28,13 +28,11 @@ input::placeholder{
 #submit {
     width:220%;
     filter:blur(.4px);
-
 }
 
 #submit:hover{
 box-shadow: 0px 1px 5px white;
 filter:blur(0px);
-
 }
 
 #video-background {

@@ -136,13 +136,36 @@ input::placeholder {
     margin-left:-50px;
     margin-right:50px;
   }
-
-
-
-
 }
 
-    
+   /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2) { 
+
+  .notification {
+      width:100%; 
+      margin-left:10px;
+
+          }
+}
+
+/* Portrait */
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) { 
+
+  .notification {
+      width:100%; 
+      margin-left:10px;
+          }
+}
+
 
 
   
