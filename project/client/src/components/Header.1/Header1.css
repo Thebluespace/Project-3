@@ -1,0 +1,46 @@
+#results-hero {
+    background: url("./images/whosbad2.png");
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; 
+    resize: both;
+    overflow: auto;
+    text-align: center;
+    box-shadow: 0 0 30px rgb(28, 46, 63);
+}
+
+.hero {
+    /* border-bottom: 50px;
+    border-bottom-color: red;  */
+    /* box-shadow: 0 0 30px rgb(77, 25, 25); */
+
+}
+.hero-body {
+    margin-top: 0;
+}
+h1 {
+    font-family: 'Shrikhand', cursive;
+    letter-spacing: 10px;
+}
+i {
+    font-size: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+button{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+button:active{
+    border-style: none;
+    border-color: transparent;
+    border:none;
+}
+#nav-btn-1 {
+    float: right !important;
+    padding-right: 2px;
+    text-shadow: blue;
+}
