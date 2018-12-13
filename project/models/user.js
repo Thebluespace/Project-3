@@ -7,23 +7,31 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
- 
-        username: {
+        location: {
             type: Sequelize.STRING,
-            notEmpty: true
+            allowNull: true
         },
- 
         email: {
             type: Sequelize.STRING,
             validate: {
                 isEmail: true
             }
         },
- 
         password: {
             type: Sequelize.STRING,
             allowNull: false
+        },
+        location: {
+            type: Sequelize.GEOMETRY("POINT"),
+            allowNull: true
+        },
+        last_login: {
+            type: Sequelize.DATE
+        },
+        status: {
+            type: Sequelize.ENUM('active', 'inactive'),
+            defaultValue: 'active'
         }
     });
-    return User; 
+    return User;
 }

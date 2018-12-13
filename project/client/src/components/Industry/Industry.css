@@ -7,3 +7,68 @@
 #industry {
     margin-top: 40px;
 }
+
+#auto {
+    background-image: url("./images/auto-industry.png");
+}
+#auto:hover {
+    background-image: url("./images/auto_hover.png");
+    transition: 1s;
+}
+
+#food {
+    background-image: url("./images/food.png");
+    
+}
+#food:hover {
+    background-image: url("./images/food_hover.png");
+    transition: 1s;
+}
+
+#retail {
+    background-image: url("./images/retail.png");
+}
+#retail:hover {
+    background-image: url("./images/retail_hover.png");
+    transition: 1s;
+}
+
+#health {
+    background-image: url("./images/health.png");
+}
+#health:hover {
+    background-image: url("./images/health_hover.png");
+    transition: 1s;
+}
+
+#services {
+    background-image: url("./images/services.png");
+}
+#services:hover{
+    background-image: url("./images/services_hover.png");
+    transition: 1s;
+}
+
+#hotels {
+    background-image: url("./images/hotel-light-low-angle-shot-96444.png");
+}
+#hotels:hover{
+    background-image: url("./images/hotel_hover.png");
+    transition: 1s;
+}
+
+#shop {
+    background-image: url("./images/shopping.png");
+}
+#shop:hover {
+    background-image: url("./images/shopping_hover.png");
+    transition: 1s;
+}
+
+#entertainment {
+    background-image: url("./images/audience-band-bright-1047442.png");
+}
+#entertainment:hover {
+    background-image: url("./images/audience_hover.png");
+    transition: 1s;
+}
