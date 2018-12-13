@@ -1,13 +1,13 @@
-.section {
-    /* background: rgb(241, 240, 240); */
+/* .section {
+    background: rgb(241, 240, 240);
 
-	/* background-blend-mode: darken;
-	background-color: rgb(86, 88, 194); */
+	background-blend-mode: darken;
+	background-color: rgb(86, 88, 194);
 	
-	/* background: 
+	background: 
     linear-gradient(purple 0%, red 90%), 
-    linear-gradient(to right, purple 0%, yellow 90%); */
-  /* background-blend-mode: screen; */
+    linear-gradient(to right, purple 0%, yellow 90%);
+  background-blend-mode: screen;
 }
 
 .Collapsible {
@@ -29,10 +29,10 @@ figure{
 }
 .speech-bubble {
 	position: relative;
-	/* background: #24B5CB; */
+	background: #24B5CB;
 	
     border-radius: 30px;
-    /* margin-bottom: 10px; */
+    margin-bottom: 10px;
     margin-top: 30px;
 }
 
@@ -78,4 +78,4 @@ article:nth-of-type(even)::after {
 
 #comment{
     margin-top: 50px;
-}
+} */

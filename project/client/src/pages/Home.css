@@ -4,12 +4,9 @@
 
 }
 
-.wrapper {
-    max-width: 50%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
+
+
+
 
 #industry {
     margin-top: 40px;
@@ -23,8 +20,8 @@
 #auto:hover {
     background-image: url("./images/auto_hover.png");
     transition: 1s;
-    /* background-repeat: no-repeat;
-    background-size: cover; */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #food {

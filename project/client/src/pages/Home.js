@@ -7,6 +7,8 @@ import Collapsible from "react-collapsible";
 import Results from "../components/Results";
 import Search from "../components/Search/Search";
 import Industry from "../components/Industry/Industry";
+import "../components/Industry/Industry.css";
+// import "./Home.css";
 
 class Home extends Component {
 
@@ -87,26 +89,19 @@ class Home extends Component {
                             <div className="tile is-ancestor">
                                 <div className="tile is-parent"> 
                                     <article className="tile is-child box" id="auto" onClick={this.handlePreset}>
-                                    {/* <p className="title"></p> */}
-                                    {/* <p className="subtitle" >Auto</p> */}
+
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
                                     <article className="tile is-child box" id="food">
-                                    {/* <p className="title">Two</p> */}
-                                    {/* <p className="subtitle" >Food</p> */}
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
                                     <article className="tile is-child box" id="retail">
-                                    {/* <p className="title">Three</p> */}
-                                    {/* <p className="subtitle">Retail</p> */}
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
                                     <article className="tile is-child box" id="health">
-                                    {/* <p className="title">Four</p> */}
-                                    {/* <p className="subtitle">Health</p> */}
                                     </article>
                                 </div>
                                 
@@ -114,27 +109,21 @@ class Home extends Component {
                             <div className="tile is-ancestor">
                                 <div className="tile is-parent">
                                     <article className="tile is-child box" id="services">
-                                    {/* <p className="title">One</p> */}
-                                    {/* <p className="subtitle">Services</p> */}
+
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
                                     <article className="tile is-child box" id="hotels">
-                                    {/* <p className="title">Two</p> */}
-                                    {/* <p className="subtitle">Hotels</p> */}
+
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
                                     <article className="tile is-child box" id="entertainment">
-                                    {/* <p className="title">Three</p> */}
-                                    {/* <p className="subtitle">Entertainment</p> */}
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
                                     <article className="tile is-child box" id=
                                     "shop">
-                                    {/* <p className="title">Four</p> */}
-                                    {/* <p className="subtitle">Clothing + Beauty</p> */}
                                     </article>
                                 </div>
                             </div>

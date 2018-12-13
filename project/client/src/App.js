@@ -6,15 +6,16 @@ import Home from "./pages/Home";
 import User from "./components/User";
 import Geo from "react-geolocated";
 import passport from "passport";
+import Results from "./pages/Results";
 
 const App = () => (
   <Router>
     <div>
       {/* <Geo/> */}
         <Switch>
-          <Route exact path="/home" component={Home}/>
+          <Route exact path="/home" component={Results}/>
           <Route path="/:id" component={Login}/>
-          <Route path="/" component={Login}/>
+          <Route path="/" component={Home}/>
           {/* {hasRole(user, ["user"]) && <Route exact path="/" Component={<Wrapper/>}/>} */}
           {/* {!hasRole(user, ["user"]) && <Route path="/" Component={<UserLogin/>}/>}  */}
         </Switch>
