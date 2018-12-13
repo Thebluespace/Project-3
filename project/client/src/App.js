@@ -3,12 +3,16 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import Results from "./pages/Results";
+
 
 const App = () => (
   <Router>
     <div>
       {/* <Geo/> */}
         <Switch>
+        <Route exact path="/Results" component={Results}/>
+
           <Route exact path="/home" component={Home}/>
           <Route path="/:id" component={Login}/>
           <Route path="/" component={Login}/>
