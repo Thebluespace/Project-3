@@ -61,7 +61,9 @@ button:active{
 #nav-btn {
     float: right !important;
 }
-
+#location {
+    float: left;
+}
 
 
 
