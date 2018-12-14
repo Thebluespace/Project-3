@@ -13,11 +13,6 @@ const Header1 = props => (
                     {/* put back role=button when you have a working link */}
                     <button id="location"><i className="fas fa-map-marker-alt"></i></button>
                     {/* change buttons back to a */}
-                    <button className="navbar-burger" aria-label="menu" aria-expanded="false">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </button>
                 </div>
                 <div className="navbar-end" id="nav-btn-1">
                     <a href="#"><i className="fas fa-sign-out-alt"></i></a>
