@@ -4,16 +4,27 @@
 
 }
 
+.wrapper {
+    max-width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
 #industry {
     margin-top: 40px;
 }
 
 #auto {
     background-image: url("./images/auto-industry.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #auto:hover {
     background-image: url("./images/auto_hover.png");
     transition: 1s;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 #food {
@@ -71,4 +82,11 @@
 #entertainment:hover {
     background-image: url("./images/audience_hover.png");
     transition: 1s;
+}
+
+.wrapper {
+    max-width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
