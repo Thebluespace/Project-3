@@ -15,7 +15,7 @@ const App = () => (
 
           <Route exact path="/home" component={Home}/>
           <Route path="/:id" component={Login}/>
-          <Route path="/" component={Login}/>
+          <Route path="/" component={Home}/>
           {/* {hasRole(user, ["user"]) && <Route exact path="/" Component={<Wrapper/>}/>} */}
           {/* {!hasRole(user, ["user"]) && <Route path="/" Component={<UserLogin/>}/>}  */}
         </Switch>
