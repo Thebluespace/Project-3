@@ -85,8 +85,9 @@ function detailsCall(data, location){
             }else{
                 element.photo = "http://nebula.wsimg.com/649eff564042a5535ea47145eed01b78?AccessKeyId=531592D248B589D87A56&alloworigin=1&disposition=0"
             }
-                axios.get(GOOGLEDETAILS + element.place_id + "&fields=review,formatted_phone_number&" + APIKEY).then((data2) => {
+                axios.get(GOOGLEDETAILS + element.place_id + "&fields=review,formatted_phone_number,formatted_address&" + APIKEY).then((data2) => {
                     try {   
+                            element.address = data2.data.result.formatted_address;
                             element.phone = data2.data.result.formatted_phone_number;
                             element.reviews = [];
                             if (!isEmpty(data2.data.result.reviews)){

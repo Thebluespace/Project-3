@@ -19,7 +19,7 @@ const Results = props => (
                                         <h4>{place.name}</h4>
                                         <p>Phone Number: {place.phone}</p>
                                         {/* <p>Open Now: {place.opening_hours.open_now ? ("Yes") : ("No")}</p> */}
-                                        <p>{place.formatted_address}</p>
+                                        <p>{place.address}</p>
                                         <span>Rating: {place.rating} (REVIEWS: {place.reviews.length})</span>
                                     </div>
                                     
