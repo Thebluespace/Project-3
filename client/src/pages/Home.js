@@ -97,7 +97,27 @@ class Home extends Component {
         });
 
     }
-
+    handleKey = event => {
+        event.preventDefault();
+        if (event.keycode === 13){
+            this.setState({"error": ""});
+            if (this.state.location === "" || this.state.location === null) {
+                return this.setState({"error":"No Location Available!"});
+            }
+            API.query(this.state.keyword,this.state.location).then(data =>{
+                console.log(data.data.reviews);
+                switch(data.data.reviews){
+                    case "No results found":
+                        this.setState({"error": data.data.reviews});
+                    break;
+                    default:
+                    this.setState({ "reviews": data.data.reviews});
+                    break;
+                }
+            });
+        }
+        console.log(event);
+    }
     returnHome = event => {
         event.preventDefault();
         this.setState({"error":"","reviews":[]});
@@ -113,7 +133,7 @@ class Home extends Component {
                         <div className="columns is-mobile is-centered">
                             <div className="column is-half is-narrow">
                             <div className="field has-addons">
-                                <div className="control is-expanded"><input name="keyword" onSubmit={this.handleSubmit} value={this.state.keyword} onChange={this.handleInputChange} className="input" type="text" placeholder="Find a business" id="search-bar"></input></div>
+                                <div className="control is-expanded"><input name="keyword" onKeyUp={this.handlekey} value={this.state.keyword} onChange={this.handleInputChange} className="input" type="text" placeholder="Find a business" id="search-bar"></input></div>
                                 <div className="control">
                                 <a onClick={this.handleSubmit} className="button is-info" id="btn-info" style={{border: "none"}}>Search</a>
                                 </div>
