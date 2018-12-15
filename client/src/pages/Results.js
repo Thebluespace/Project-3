@@ -37,7 +37,7 @@ class Results extends Component {
                                                             <div>
                                                                 <div className="tile is-parent" id="ind-reviews">
                                                                     <figure className="image is-70x70">
-                                                                        <img src="http://lorempixel.com/100/100/" className="is-rounded" alt="userpic" />
+                                                                        <img src="https://picsum.photos/100/100?image=0" className="is-rounded" alt="userpic" />
                                                                     </figure>
                                                                     <article className="tile is-child speech-bubble box comment">
 
@@ -50,7 +50,7 @@ class Results extends Component {
 
 
 
-                                                            <div className="tile is-parent">
+                                                            {/* <div className="tile is-parent">
                                                                 <article className="tile is-child speech-bubble box comment">
                                                                     <p>User Pic</p>
                                                                     <p>Username</p>
@@ -76,7 +76,7 @@ class Results extends Component {
                                                                     <p>date et time</p>
                                                                     <p>User comment</p>
                                                                 </article>
-                                                            </div>
+                                                            </div> */}
                                                         </div>
                                                     {/* </div> */}
                                                 </div>
@@ -84,7 +84,7 @@ class Results extends Component {
                                         </Collapsible>
                                     </div>
                                 </div>
-                                <div className="tile is-parent">
+                                {/* <div className="tile is-parent">
                                     <div className="tile is-child box">
                                         <img src="https://fakeimg.pl/250x100/" />
                                         <h4>Restaurant Name</h4>
@@ -107,7 +107,7 @@ class Results extends Component {
                                         <p>Address</p>
                                         <span>Rating and number of reviews</span>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
