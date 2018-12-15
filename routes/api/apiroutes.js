@@ -79,7 +79,7 @@ function detailsCall(data, location){
     });
     return reviews;
 }
-
+router.get('/favicon.ico', (req, res) => res.status(204));
 router.post("/query", (req,res) => {
     try{
         console.log("Query made : ", req.body);
