@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import Results from "../components/Results";
 import {geolocated} from 'react-geolocated';
 import  "../components/Industry/Industry.css";
-
+import "./Search.css";
 
 class Home extends Component {
 

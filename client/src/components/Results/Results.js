@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import Header1 from "../Header.1";
 // import Accordion from "../components/Accordion";
 import Collapsible from "react-collapsible";
-// import "./Results.css";
+import "./Results.css";
 
 const Results = props => (
             <div className="section ">
