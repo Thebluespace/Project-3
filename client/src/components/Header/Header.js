@@ -17,8 +17,8 @@ const Header = props => (
 
                 </div>
                 <div className="navbar-end" id="nav-btn">
-                    <a href="#"><i className="fas fa-sign-out-alt"></i></a>
-                    <a href="#"><i className="fas fa-home"></i></a>
+                    <a href="/api/signout"><i className="fas fa-sign-out-alt"></i></a>
+                    <a href="/"><i className="fas fa-home"></i></a>
                 </div>
             </nav>
         </div>

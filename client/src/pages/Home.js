@@ -81,13 +81,26 @@ class Home extends Component {
 
     unfliteredSearch = event => {
         event.preventDefault();
+        this.setState({"error":""});
         if (this.state.location === "" || this.state.location === null) {
             return this.setState({"error":"No Location Available!"});
         }
         API.uquery(this.state.keyword,this.state.location).then(data =>{
-            this.setState({ "reviews": data.data.reviews});
+            switch(data.data.reviews){
+                case "No results found":
+                    this.setState({"error": "Sorry! Still no reviews :("});
+                break;
+                default:
+                    this.setState({ "reviews": data.data.reviews});
+                break;
+            }
         });
 
+    }
+
+    returnHome = event => {
+        event.preventDefault();
+        this.setState({"error":"","reviews":[]});
     }
 
     render() {

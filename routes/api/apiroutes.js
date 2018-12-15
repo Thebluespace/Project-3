@@ -23,7 +23,7 @@ function placesCall(query,location) {
                     if (sorted.length < 1){
                         resolve("No results found");
                     }
-                    console.log(sorted);    
+                    // console.log(sorted);    
                 } catch (error) {
                     console.log(error);
                 }
@@ -54,7 +54,7 @@ function uplacesCall(query,location) {
                     if (sorted.length < 1){
                         resolve("No results found");
                     }
-                    console.log(sorted);    
+                    // console.log(sorted);    
                 } catch (error) {
                     console.log(error);
                 }
