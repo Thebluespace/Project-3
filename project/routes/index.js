@@ -6,8 +6,14 @@ const apiRoutes = require("./api");
 router.use("/api", apiRoutes);
 
 // If no API routes are hit, send the React app
-router.get("*",function(req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// ... other app.use middleware 
+router.use(express.static(path.join(__dirname, "client", "build")))
+
+// ...
+// Right before your app.listen(), add this:
+router.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
+
 
 module.exports = router;
