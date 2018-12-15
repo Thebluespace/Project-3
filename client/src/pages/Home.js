@@ -17,15 +17,17 @@ class Home extends Component {
         location: ""
     };
     componentDidMount = () =>{
+        setTimeout(()=>{   
         var error = localStorage.getItem("error");
         var location = localStorage.getItem("location");
         this.setState({"location":location,"error":error});
+        },3000);
     }
     myCallback = data =>{
         setTimeout(()=>{   
         localStorage.setItem("error",data.error);
         localStorage.setItem("location",data.Geo);
-        },1000)
+        },2000)
     };
     handleInputChange = event => {
         event.preventDefault();
