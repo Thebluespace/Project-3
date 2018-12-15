@@ -93,6 +93,7 @@ class Home extends Component {
     render() {
         return (
         <div>
+            {!this.props.isGeolocationAvailable ? this.myCallback({"Geo":"","error":"No Geolocation Available!"}) : !this.props.isGeolocationEnabled ? this.myCallback({"Geo":"","error":"Geolocation not enabled!"}) : this.props.coords ? this.myCallback({"Geo":this.props.coords.latitude + "," + this.props.coords.longitude,"error":""}) : this.myCallback({"Geo":"","error":"No Coords!"})}
             <Header/>
                 <div className="columns">
                     <div id="search" className="hero-body has-text-centered">
@@ -108,7 +109,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                {this.state.error === "No results found" ? (<div><h2 onClick={this.unfliteredSearch}>No Results found! Click here to remove bad filters!</h2></div>) : this.state.error != "" ? (<div><h1>{this.state.error}</h1></div>) : (<div/>)}
+                {this.state.error === "No results found" ? (<div><a className="button is-fullwidth" onClick={this.unfliteredSearch}>No Results found! Click here to remove bad filters!</a></div>) : this.state.error != "" ? (<div><h1>{this.state.error}</h1></div>) : (<div/>)}
                 {this.state.reviews.length === 0 ? (
                     <div className="wrapper" id="columns">
                         <div id="industry">
