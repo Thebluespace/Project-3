@@ -15,7 +15,7 @@ function isEmpty(obj) {
 function placesCall(query,location) {
     try {
         var reviews = new Promise(function(resolve,reject){
-            axios.get(GOOGLEPLACES + APIKEY + "&location=35.230705,-80.807955&radius=5000&keyword=" + query).then((data) => {
+            axios.get(GOOGLEPLACES + APIKEY + "&location="+ location + "&radius=5000&keyword=" + query).then((data) => {
                 //console.log(data.data);
                 try {
                     var sorted = data.data.results.filter(place => place.rating < 3);
@@ -84,8 +84,9 @@ router.post("/query", (req,res) => {
     try{
         console.log("Query made : ", req.body);
         var query = req.body.query;
+        var location = req.body.location;
         let reviews = new Promise((resolve,reject) => {
-            var data = placesCall(query);
+            var data = placesCall(query,location);
                 resolve(data);
         });
         reviews.then(value =>{
