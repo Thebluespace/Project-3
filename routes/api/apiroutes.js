@@ -133,7 +133,7 @@ router.post("/query", (req,res) => {
 
 router.post("/uquery", (req,res) => {
     try{
-        console.log("Query made : ", req.body);
+        console.log("Unfiltered Query made : ", req.body);
         var query = req.body.query;
         var location = req.body.location;
         let reviews = new Promise((resolve,reject) => {
