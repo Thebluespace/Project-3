@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "whosbad",
-    "host": "127.0.0.1",
+    "username": "x5kqklj12xq7d52i",
+    "password": "xtromineddr76uhh",
+    "database": "ev8sjlz99s92nng5",
+    "host": "gk90usy5ik2otcvi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
-    "port": "8889"
+    "port": "3306"
   }
 }
