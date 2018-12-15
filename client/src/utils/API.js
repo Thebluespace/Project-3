@@ -1,8 +1,11 @@
 import axios from "axios";
 
 export default {
-  query: function(post) {
-    return axios.post("/api/query",{"query":post});
+  query: function(post,location) {
+    return axios.post("/api/query",{"query":post,"location":location});
+  },
+  uquery: function(post,location) {
+    return axios.post("/api/uquery",{"query":post,"location":location});
   },
   signin: function(post) {
     return axios.post("/api/signin", post);

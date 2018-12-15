@@ -11,8 +11,6 @@ const App = () => (
     <div>
       {/* <Geo/> */}
         <Switch>
-        <Route exact path="/Results" component={Results}/>
-
           <Route exact path="/home" component={Home}/>
           <Route path="/:id" component={Login}/>
           <Route path="/" component={Home}/>
