@@ -44,6 +44,37 @@ function placesCall(query,location) {
     }
 }
 
+function uplacesCall(query,location) {
+    try {
+        var reviews = new Promise(function(resolve,reject){
+            axios.get(GOOGLEPLACES + APIKEY + "&location="+ location + "&radius=5000&keyword=" + query).then((data) => {
+                //console.log(data.data);
+                try {
+                    var sorted = sorted.filter(place => place.rating > 0);
+                    if (sorted.length < 1){
+                        resolve("No results found");
+                    }
+                    console.log(sorted);    
+                } catch (error) {
+                    console.log(error);
+                }
+                
+                resolve(detailsCall(sorted,location));
+            }).catch((error)=>{
+               console.log(error);
+               resolve({"error": error.message});
+            }); 
+        });
+        reviews.then(value => {
+            console.log("Resolved");
+        });
+        return reviews;
+    } catch (error) {
+        console.log(error);
+        return {"error": error.message};
+    }
+}
+
 function detailsCall(data, location){
     var reviews = new Promise(function(resolve,reject){
         var reviews2 = [];
@@ -87,6 +118,25 @@ router.post("/query", (req,res) => {
         var location = req.body.location;
         let reviews = new Promise((resolve,reject) => {
             var data = placesCall(query,location);
+                resolve(data);
+        });
+        reviews.then(value =>{
+            // console.log(value);
+            res.json({"reviews": value});
+        });
+    } catch(error){
+        console.log(error);
+        res.json({"error": error.message});
+    }
+});
+
+router.post("/uquery", (req,res) => {
+    try{
+        console.log("Query made : ", req.body);
+        var query = req.body.query;
+        var location = req.body.location;
+        let reviews = new Promise((resolve,reject) => {
+            var data = uplacesCall(query,location);
                 resolve(data);
         });
         reviews.then(value =>{

@@ -69,6 +69,13 @@ class Home extends Component {
             });
         });
     };
+
+    unfilteredQuery = event =>{
+        event.preventDefault()
+        API.uquery(this.state.keyword,this.state.location).then(data =>{
+            this.setState({ "reviews": data.data.reviews});
+        });
+    }
     // constructor(props) {
     //     super(props);
     //     this.state = {
@@ -97,7 +104,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                {this.state.error != "" ? (<div><h1>{this.state.error}</h1></div>) : (<div/>)}
+                {this.state.error === "No results found" ? (<div><h2 onClick={this.unfilteredQuery}>No Results Found! Click here to remove bad filters.</h2></div>) : this.state.error != "" ? (<div><h1>{this.state.error}</h1></div>) : (<div/>)}
                 {this.state.reviews.length === 0 ? (
                     <div className="wrapper" id="columns">
                         <div id="industry">

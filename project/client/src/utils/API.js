@@ -4,6 +4,9 @@ export default {
   query: function(post, location) {
     return axios.post("/api/query",{"query":post, "location":location});
   },
+  uquery: function(post, location) {
+    return axios.post("/api/query",{"uquery":post, "location":location});
+  },
   signin: function(post) {
     return axios.post("/api/signin", post);
   },
