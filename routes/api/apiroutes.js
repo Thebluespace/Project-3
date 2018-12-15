@@ -115,8 +115,9 @@ router.post("/query", (req,res) => {
     try{
         console.log("Query made : ", req.body);
         var query = req.body.query;
+        var location = req.body.location;
         let reviews = new Promise((resolve,reject) => {
-            var data = placesCall(query);
+            var data = placesCall(query,location);
                 resolve(data);
         });
         reviews.then(value =>{
@@ -133,8 +134,9 @@ router.post("/uquery", (req,res) => {
     try{
         console.log("Query made : ", req.body);
         var query = req.body.query;
+        var location = req.body.location;
         let reviews = new Promise((resolve,reject) => {
-            var data = uplacesCall(query);
+            var data = uplacesCall(query,location);
                 resolve(data);
         });
         reviews.then(value =>{
