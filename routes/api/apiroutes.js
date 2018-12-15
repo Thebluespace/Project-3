@@ -50,7 +50,7 @@ function uplacesCall(query,location) {
             axios.get(GOOGLEPLACES + APIKEY + "&location="+ location +"&radius=5000&keyword=" + query).then((data) => {
                 //console.log(data.data);
                 try {
-                    var sorted = sorted.filter(place => place.rating > 0);
+                    var sorted = data.data.results.filter(place => place.rating > 0);
                     if (sorted.length < 1){
                         resolve("No results found");
                     }
