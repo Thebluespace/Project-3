@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const axios = require("axios");
 const GOOGLEPLACES = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
-const APIKEY = process.env.apikey;
+const APIKEY = process.env.apikey || "key=AIzaSyBipENZtBfYDZlYlK0kFEMrpPWONITf9E4";
 const GOOGLEDETAILS = "https://maps.googleapis.com/maps/api/place/details/json?placeid="
 
 function isEmpty(obj) {
