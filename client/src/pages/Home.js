@@ -54,6 +54,14 @@ class Home extends Component {
             });
         });
     };
+
+    unfliteredSearch = event => {
+        event.preventDefault();
+        API.unfilteredQuery(this.state.keyword).then(data =>{
+            this.setState({ "reviews": data.data.reviews});
+        });
+
+    }
     // constructor(props) {
     //     super(props);
     //     this.state = {
@@ -82,7 +90,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                {this.state.error != "" ? (<div><h1>{this.state.error}</h1></div>) : (<div/>)}
+                {this.state.error === "No results found" ? (<div><h2 onClick={this.unfliteredSearch}>No Results found! Click here to remove bad filters!</h2></div>) : this.state.error != "" ? (<div><h1>{this.state.error}</h1></div>) : (<div/>)}
                 {this.state.reviews.length === 0 ? (
                     <div className="wrapper" id="columns">
                         <div id="industry">
@@ -93,37 +101,36 @@ class Home extends Component {
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="food">
+                                    <article className="tile is-child box" id="food" onClick={this.handlePreset}>
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="retail">
+                                    <article className="tile is-child box" id="retail" onClick={this.handlePreset}>
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="health">
+                                    <article className="tile is-child box" id="health" onClick={this.handlePreset}>
                                     </article>
                                 </div>
                                 
                             </div>
                             <div className="tile is-ancestor">
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="services">
+                                    <article className="tile is-child box" id="services" onClick={this.handlePreset}>
 
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="hotels">
+                                    <article className="tile is-child box" id="hotels" onClick={this.handlePreset}>
 
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="entertainment">
+                                    <article className="tile is-child box" id="entertainment" onClick={this.handlePreset}>
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id=
-                                    "shop">
+                                    <article className="tile is-child box" id="shop" onClick={this.handlePreset}>
                                     </article>
                                 </div>
                             </div>
