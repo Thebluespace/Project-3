@@ -20,6 +20,7 @@ class Login extends Component {
     };
     handleLogin = event => {
         event.preventDefault();
+        this.setState({"error":""});
         if (this.state.email&& this.state.password) {
         API.signin({
             email: this.state.email,
@@ -37,6 +38,7 @@ class Login extends Component {
 
     handleSignup = event => {
         event.preventDefault();
+        this.setState({"error":""});
         if (this.state.email&& this.state.password) {
         API.signup({
             email: this.state.email,
@@ -59,6 +61,7 @@ class Login extends Component {
                         <source src="https://player.vimeo.com/external/287831458.sd.mp4?s=ea1c5ae2328fb88b03335bd198970d9736c271e7&profile_id=165" type="video/mp4" />
                     </video>
                     <h1 id="webtitle">WHO'S BAD?</h1>
+                    {this.state.error === "" ? (<div/>) : (<div><p>{this.state.error}</p></div>) }
                     {!this.props.match.params.id ? <div className="login">
                             <div className="level">
                                 <div className="notification">
@@ -81,7 +84,6 @@ class Login extends Component {
                                             </span>
                                         </p>
                                     </div>
-                                    {this.state.error === "" ? (<div/>) : (<div><p>{this.state.error}</p></div>) }
                                     <div className="loginbtn" />
                                     <div className="field is-grouped">
                                         <p className="control">
@@ -127,7 +129,6 @@ class Login extends Component {
                                             </span>
                                         </p>
                                     </div>
-                                    {this.state.error === "" ? (<div/>) : (<div><p>{this.state.error}</p></div>) }
                                     <div className="signUpbtn" />
                                     <div className="field is-grouped">
                                         <p className="control id=signup">
