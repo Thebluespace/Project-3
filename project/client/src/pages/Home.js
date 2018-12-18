@@ -89,20 +89,23 @@ class Home extends Component {
                             <div className="tile is-ancestor">
                                 <div className="tile is-parent"> 
                                     <article className="tile is-child box" id="auto" onClick={this.handlePreset}>
-
-                                    </article>
+                                    </article> 
+                                    <span className="industry-tile">Auto</span>
                                 </div>
                                 <div className="tile is-parent">
                                     <article className="tile is-child box" id="food">
                                     </article>
+                                    <span className="industry-tile">Food</span>
                                 </div>
                                 <div className="tile is-parent">
                                     <article className="tile is-child box" id="retail">
                                     </article>
+                                    <span className="industry-tile">Retail</span>
                                 </div>
                                 <div className="tile is-parent">
                                     <article className="tile is-child box" id="health">
                                     </article>
+                                    <span className="industry-tile">Health</span>
                                 </div>
                                 
                             </div>

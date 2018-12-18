@@ -90,3 +90,7 @@
     display: flex;
     justify-content: center;
 }
+
+.industry-tile {
+    display: none;
+}
