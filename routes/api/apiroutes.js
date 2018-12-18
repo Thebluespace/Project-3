@@ -116,7 +116,7 @@ router.post('/signup', (req, res) => {
               return res.json({ error: err.message });
             }
             console.log("account created successfully");
-            res.json({ redirect: "/home" });
+            res.json({"type": "/home" });
           });
         }
       }
