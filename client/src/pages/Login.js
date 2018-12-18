@@ -6,7 +6,6 @@ import User from "../components/User/User";
 class Login extends Component {
 
     state = {
-        username: "",
         email: "",
         password: "",
         phone: "",
@@ -24,11 +23,20 @@ class Login extends Component {
         if (this.state.email&& this.state.password) {
         API.Login({
             email: this.state.email,
-            password: this.state.password,
-            location: this.state.location
+            password: this.state.password
          }).catch(err => console.log(err));
         }
     }
+
+    handleSignup = event => {
+        event.preventDefault();
+        if (this.state.email&& this.state.password) {
+        API.signup({
+            email: this.state.email,
+            password: this.state.password
+         }).catch(err => console.log(err));
+        }
+    };
     render() {
         return (
             // <Login />
