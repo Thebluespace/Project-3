@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router-dom'
 import API from "../utils/API.js";
 import "./Login.css";
 import Signin from "../components/SignIn/Signin";
@@ -24,7 +25,12 @@ class Login extends Component {
         API.Login({
             email: this.state.email,
             password: this.state.password
-         }).catch(err => console.log(err));
+         }).then(data=> {
+            console.log(data.data);
+            if(data.data.type === "success"){
+                return (<Redirect to="/home"/>)
+            }
+        }).catch(err => console.log(err));
         }
     }
 
@@ -34,6 +40,11 @@ class Login extends Component {
         API.signup({
             email: this.state.email,
             password: this.state.password
+         }).then(data=> {
+            console.log(data.data);
+            if(data.data.type === "success"){
+                return (<Redirect to="/home"/>)
+            }
          }).catch(err => console.log(err));
         }
     };

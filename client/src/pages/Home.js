@@ -19,8 +19,8 @@ class Home extends Component {
     };
     componentDidMount = () =>{
         API.checkAuth().then(data => {
-            console.log(data);
-            if(data.type === "fail"){
+            console.log(data.data);
+            if(data.data.type === "fail"){
                 return (<Redirect to="/"/>)
             }
         })
