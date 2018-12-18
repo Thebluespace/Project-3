@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import Header1 from "../Header.1";
 // import Accordion from "../components/Accordion";
 import Collapsible from "react-collapsible";
-// import "./Results.css";
+import "./Results.css";
 
 const Results = props => (
             <div className="section ">
@@ -19,7 +19,7 @@ const Results = props => (
                                         <h4>{place.name}</h4>
                                         <p>Phone Number: {place.phone}</p>
                                         {/* <p>Open Now: {place.opening_hours.open_now ? ("Yes") : ("No")}</p> */}
-                                        <p>{place.formatted_address}</p>
+                                        <p>{place.address}</p>
                                         <span>Rating: {place.rating} (REVIEWS: {place.reviews.length})</span>
                                     </div>
                                     
@@ -35,7 +35,7 @@ const Results = props => (
                                                             <article className="tile is-child speech-bubble box comment">
                                                                 <p>{review.author_name}</p>
                                                                 <p>Rating: {review.rating}</p>
-                                                                <p>Time: {review.time}</p>
+                                                                {/* <p>Time: {new Date(setUTCSeconds(review.time))}</p> */}
                                                                 <p>{review.text}</p>
                                                             </article>
                                                         </div>
