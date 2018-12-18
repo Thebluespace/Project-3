@@ -17,7 +17,7 @@ class Home extends Component {
         location: ""
     };
     componentDidMount = () =>{
-        checkAuth();
+        console.log(API.checkAuth());
         setTimeout(()=>{   
         var error = localStorage.getItem("error");
         var location = localStorage.getItem("location");
@@ -25,11 +25,7 @@ class Home extends Component {
         },3000);
     }
 
-    checkAuth = () => {
-        API.checkAuth(data => {
-            console.log(data);
-        })
-    }
+
 
     myCallback = data =>{
         setTimeout(()=>{   
