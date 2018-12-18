@@ -3,6 +3,13 @@ const axios = require("axios");
 const GOOGLEPLACES = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
 const APIKEY = process.env.apikey || "key=AIzaSyBipENZtBfYDZlYlK0kFEMrpPWONITf9E4";
 const GOOGLEDETAILS = "https://maps.googleapis.com/maps/api/place/details/json?placeid="
+const passport = require("passport");
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+      return next();
+    res.redirect('/');
+};
 
 function isEmpty(obj) {
     for(var key in obj) {
@@ -174,6 +181,9 @@ router.post('/signup', (req, res) => {
     })(req, res)
 });
   
+router.get("/checkAuth", isLoggedIn, (data) => {
+    console.log(data);
+})
 router.get('/logout',(req,res) => {
     req.session.destroy(function(err) {
         res.redirect('/');

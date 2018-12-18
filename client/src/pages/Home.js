@@ -17,12 +17,20 @@ class Home extends Component {
         location: ""
     };
     componentDidMount = () =>{
+        checkAuth();
         setTimeout(()=>{   
         var error = localStorage.getItem("error");
         var location = localStorage.getItem("location");
         this.setState({"location":location,"error":error});
         },3000);
     }
+
+    checkAuth = () => {
+        API.checkAuth(data => {
+            console.log(data);
+        })
+    }
+
     myCallback = data =>{
         setTimeout(()=>{   
         localStorage.setItem("error",data.error);

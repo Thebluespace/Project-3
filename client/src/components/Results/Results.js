@@ -35,7 +35,7 @@ const Results = props => (
                                                             <article className="tile is-child speech-bubble box comment">
                                                                 <p>{review.author_name}</p>
                                                                 <p>Rating: {review.rating}</p>
-                                                                <p>Time: {review.time}</p>
+                                                                <p>Time: {new Date(setUTCSeconds(review.time))}</p>
                                                                 <p>{review.text}</p>
                                                             </article>
                                                         </div>
