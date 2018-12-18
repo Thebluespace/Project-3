@@ -22,7 +22,7 @@ class Login extends Component {
     handleLogin = event => {
         event.preventDefault();
         if (this.state.email&& this.state.password) {
-        API.Login({
+        API.signin({
             email: this.state.email,
             password: this.state.password
          }).then(data=> {
@@ -56,7 +56,7 @@ class Login extends Component {
                         <source src="https://player.vimeo.com/external/287831458.sd.mp4?s=ea1c5ae2328fb88b03335bd198970d9736c271e7&profile_id=165" type="video/mp4" />
                     </video>
                     <h1 id="webtitle">WHO'S BAD?</h1>
-                    {this.props.match.params.id ? <div className="login">
+                    {!this.props.match.params.id ? <div className="login">
                             <div className="level">
                                 <div className="notification">
                                     <div className="field">
