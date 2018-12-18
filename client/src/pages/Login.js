@@ -9,6 +9,7 @@ class Login extends Component {
         username: "",
         email: "",
         password: "",
+        phone: "",
         location: ""
     }
     handleInputChange = event => {
@@ -41,7 +42,7 @@ class Login extends Component {
                                 <div className="notification">
                                     <div className="field">
                                         <p className="control has-icons-left has-icons-right">
-                                            <input className="input" type="email" onChange={this.handleInputChange} placeholder=" Email" />
+                                            <input className="input" type="email" name="email" onChange={this.handleInputChange} placeholder=" Email" />
                                             <span className="icon is-small is-left">
                                                 <i className="fas fa-envelope fa-1x"></i>
                                             </span>
@@ -52,7 +53,7 @@ class Login extends Component {
                                     </div>
                                     <div className="field">
                                         <p className="control has-icons-left">
-                                            <input className="input" type="password" onChange={this.handleInputChange} placeholder=" Password" />
+                                            <input className="input" type="password" name="password" onChange={this.handleInputChange} placeholder=" Password" />
                                             <span className="icon is-small is-left">
                                                 <i className="fas fa-lock fa-1x "></i>
                                             </span>
@@ -76,7 +77,7 @@ class Login extends Component {
                                 <div className="notification">
                                     <div className="field">
                                         <p className="control has-icons-left has-icons-right">
-                                            <input className="input" type="email" onChange={this.handleInputChange} placeholder=" Email" />
+                                            <input className="input" type="email" name="email" onChange={this.handleInputChange} placeholder=" Email" />
                                             <span className="icon is-small is-left">
                                                 <i className="fas fa-envelope fa-1x"></i>
                                             </span>
@@ -88,7 +89,7 @@ class Login extends Component {
 
                                     <div className="field">
                                         <p className="control has-icons-left">
-                                            <input className="input" type=" password" onChange={this.handleInputChange} placeholder=" Password" />
+                                            <input className="input" type="password" name="password" onChange={this.handleInputChange} placeholder=" Password" />
                                             <span className="icon is-small is-left">
                                                 <i className="fas fa-lock fa-1x"></i>
                                             </span>
@@ -97,7 +98,7 @@ class Login extends Component {
 
                                     <div className="field">
                                         <p className="control has-icons-left">
-                                            <input className="input" type=" phone number" onChange={this.handleInputChange} placeholder=" Mobile" />
+                                            <input className="input" type="phone number" name="phone" onChange={this.handleInputChange} placeholder=" Mobile" />
                                             <span className="icon is-small is-left">
                                             <i className="fas fa-phone fa-1x"></i>
                                             </span>
