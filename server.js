@@ -22,7 +22,7 @@ app.use(routes);
 
 require("./config/passport.js")(passport, db.user);
 
-var syncOptions = { force: true };
+var syncOptions = { force: false };
 // Start the API server
 
 // Starting the server, syncing our models ------------------------------------/

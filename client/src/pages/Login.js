@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom'
+import { Redirect,withRouter } from 'react-router-dom'
 import API from "../utils/API.js";
 import "./Login.css";
 import Signin from "../components/SignIn/Signin";
@@ -28,7 +28,7 @@ class Login extends Component {
          }).then(data=> {
             console.log(data.data);
             if(data.data.type === "success"){
-                return (<Redirect to="/home"/>)
+                this.props.history.push('/home')
             }
         }).catch(err => console.log(err));
         }
@@ -43,7 +43,7 @@ class Login extends Component {
          }).then(data=> {
             console.log(data.data);
             if(data.data.type === "success"){
-                return (<Redirect to="/home"/>)
+                this.props.history.push('/home')
             }
          }).catch(err => console.log(err));
         }

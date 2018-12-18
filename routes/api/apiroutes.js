@@ -196,18 +196,18 @@ passport.authenticate('local-signin', (err, user, info) => {
     console.log(info);
     if (err) {
     console.log(err);
-    return res.json({ error: err.message });
+    return res.json({ "type": err.message });
     } else {
     if (!user) {
-        return res.send({ error: info.message });
+        return res.send({ "type": info.message });
     } else {
         req.login(user, err => {
         if (err) {
             console.log(err);
-            return res.json({ error: err.message });
+            return res.json({ "type": err.message });
         }
         console.log("successful sign-in");
-        res.json({ redirect: "/home" });
+        res.json({ "type": "success" });
         });
     }
     }
