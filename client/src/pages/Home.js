@@ -18,11 +18,12 @@ class Home extends Component {
         location: ""
     };
     componentDidMount = () =>{
-        var type = API.checkAuth();
-        console.log(type);
-        if(type.type === "fail"){
-            return (<Redirect to="/"/>)
-        }
+        API.checkAuth().then(data => {
+            console.log(data);
+            if(data.type === "fail"){
+                return (<Redirect to="/"/>)
+            }
+        })
         setTimeout(()=>{   
         var error = localStorage.getItem("error");
         var location = localStorage.getItem("location");

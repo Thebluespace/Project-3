@@ -171,7 +171,7 @@ router.post('/signup', (req, res) => {
           req.login(user, err => {
             if (err) {
               console.log(err);
-              return res.json({ error: err.message });
+              return res.json({ "type": err.message });
             }
             console.log("account created successfully");
             res.json({ "type": "success" });
