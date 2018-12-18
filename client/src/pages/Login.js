@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Redirect,withRouter } from 'react-router-dom'
 import API from "../utils/API.js";
 import "./Login.css";
+import "../components/SignIn/Signin.css";
+import "../components/User/User.css"
 class Login extends Component {
 
     state = {
