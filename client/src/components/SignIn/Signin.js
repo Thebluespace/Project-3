@@ -7,7 +7,7 @@ const Signin = props => (
             <div className="notification">
                 <div className="field">
                     <p className="control has-icons-left has-icons-right">
-                        <input className="input" type="  email" placeholder=" Email" />
+                        <input className="input" type="email" placeholder=" Email" />
                         <span className="icon is-small is-left">
                             <i className="fas fa-envelope fa-1x"></i>
                         </span>
@@ -18,7 +18,7 @@ const Signin = props => (
                 </div>
                 <div className="field">
                     <p className="control has-icons-left">
-                        <input className="input" type=" password" placeholder=" Password" />
+                        <input className="input" type="password" placeholder=" Password" />
                         <span className="icon is-small is-left">
                             <i className="fas fa-lock fa-1x "></i>
                         </span>

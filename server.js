@@ -3,7 +3,7 @@ var db = require("./models");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8000;
 
 // Define middleware here
 var passport   = require('passport');
@@ -22,7 +22,7 @@ app.use(routes);
 
 require("./config/passport.js")(passport, db.user);
 
-var syncOptions = { force: true };
+var syncOptions = { force: false };
 // Start the API server
 
 // Starting the server, syncing our models ------------------------------------/

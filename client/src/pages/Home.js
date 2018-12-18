@@ -1,12 +1,13 @@
 "use strict";
 import React, { Component } from "react";
 import API from "../utils/API.js";
-import {geolocated} from 'react-geolocated';
 import Header from '../components/Header';
 import Footer from "../components/Footer";
 import Results from "../components/Results";
+import {geolocated} from 'react-geolocated';
+import { Redirect,withRouter } from 'react-router-dom'
 import  "../components/Industry/Industry.css";
-
+import "./Search.css";
 
 class Home extends Component {
 
@@ -15,22 +16,29 @@ class Home extends Component {
         reviews: [],
         error: "",
         location: ""
-    }
+    };
     componentDidMount = () =>{
+        API.checkAuth().then(data => {
+            console.log(data.data);
+            if(data.data.type === "fail"){
+                this.props.history.push('/')
+            }
+        })
+        setTimeout(()=>{   
         var error = localStorage.getItem("error");
         var location = localStorage.getItem("location");
         this.setState({"location":location,"error":error});
+        },3000);
     }
     myCallback = data =>{
         setTimeout(()=>{   
         localStorage.setItem("error",data.error);
         localStorage.setItem("location",data.Geo);
-        },1000)
+        },2000)
     };
     handleInputChange = event => {
         event.preventDefault();
-        const name = event.target.name;
-        const value = event.target.value;
+        const {name,value} = event.target;
         console.log(name,value);
         this.setState({
             [name]: value
@@ -39,7 +47,7 @@ class Home extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.setState({"error": ""});
-        if (this.state.location === "") {
+        if (this.state.location === "" || this.state.location === null) {
             return this.setState({"error":"No Location Available!"});
         }
         API.query(this.state.keyword,this.state.location).then(data =>{
@@ -61,34 +69,78 @@ class Home extends Component {
             "keyword": id,
             "error": ""
         }, () => {
-            if (this.state.location === "") {
+            if (this.state.location === "" || this.state.location === null) {
                 return this.setState({"error":"No Location Available!"});
             }
             API.query(this.state.keyword,this.state.location).then(data =>{
-                this.setState({ "reviews": data.data.reviews});
+                console.log(data);
+                switch(data.data.reviews){
+                    case "No results found":
+                        this.setState({"error": data.data.reviews});
+                    break;
+                    default:
+                    this.setState({ "reviews": data.data.reviews});
+                    break;
+                }
             });
         });
     };
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         videoURL: 'https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/2566/11/287831458/1087833265.mp4?token=1543892716-0x38e1b989c2ad4cf0c9466c033acbffa6ce001916'
-            
-    //     }
-    // }
+
+    unfliteredSearch = event => {
+        event.preventDefault();
+        this.setState({"error":""});
+        if (this.state.location === "" || this.state.location === null) {
+            return this.setState({"error":"No Location Available!"});
+        }
+        API.uquery(this.state.keyword,this.state.location).then(data =>{
+            switch(data.data.reviews){
+                case "No results found":
+                    this.setState({"error": "Sorry! Still no reviews :("});
+                break;
+                default:
+                    this.setState({ "reviews": data.data.reviews});
+                break;
+            }
+        });
+
+    }
+    handleKey = event => {
+        event.preventDefault();
+        if (event.keycode === 13){
+            this.setState({"error": ""});
+            if (this.state.location === "" || this.state.location === null) {
+                return this.setState({"error":"No Location Available!"});
+            }
+            API.query(this.state.keyword,this.state.location).then(data =>{
+                console.log(data.data.reviews);
+                switch(data.data.reviews){
+                    case "No results found":
+                        this.setState({"error": data.data.reviews});
+                    break;
+                    default:
+                    this.setState({ "reviews": data.data.reviews});
+                    break;
+                }
+            });
+        }
+        console.log(event);
+    }
+    returnHome = event => {
+        event.preventDefault();
+        this.setState({"error":"","reviews":[]});
+    }
 
     render() {
         return (
         <div>
             {!this.props.isGeolocationAvailable ? this.myCallback({"Geo":"","error":"No Geolocation Available!"}) : !this.props.isGeolocationEnabled ? this.myCallback({"Geo":"","error":"Geolocation not enabled!"}) : this.props.coords ? this.myCallback({"Geo":this.props.coords.latitude + "," + this.props.coords.longitude,"error":""}) : this.myCallback({"Geo":"","error":"No Coords!"})}
             <Header/>
-               
                 <div className="columns">
                     <div id="search" className="hero-body has-text-centered">
                         <div className="columns is-mobile is-centered">
                             <div className="column is-half is-narrow">
                             <div className="field has-addons">
-                                <div className="control is-expanded"><input name="keyword" value={this.state.keyword} onChange={this.handleInputChange} className="input" type="text" placeholder="Find a business" id="search-bar"></input></div>
+                                <div className="control is-expanded"><input name="keyword" onKeyUp={this.handlekey} value={this.state.keyword} onChange={this.handleInputChange} className="input" type="text" placeholder="Find a business" id="search-bar"></input></div>
                                 <div className="control">
                                 <a onClick={this.handleSubmit} className="button is-info" id="btn-info" style={{border: "none"}}>Search</a>
                                 </div>
@@ -97,7 +149,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                {this.state.error != "" ? (<div><h1>{this.state.error}</h1></div>) : (<div/>)}
+                {this.state.error === "No results found" ? (<div><a className="button is-fullwidth" onClick={this.unfliteredSearch}>No Results found! Click here to remove bad filters!</a></div>) : this.state.error != "" ? (<div><h1>{this.state.error}</h1></div>) : (<div/>)}
                 {this.state.reviews.length === 0 ? (
                     <div className="wrapper" id="columns">
                         <div id="industry">
@@ -108,17 +160,17 @@ class Home extends Component {
                                     <span className="industry-tile">Auto</span>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="food">
+                                    <article className="tile is-child box" id="food" onClick={this.handlePreset}>
                                     </article>
                                     <span className="industry-tile">Food</span>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="retail">
+                                    <article className="tile is-child box" id="retail" onClick={this.handlePreset}>
                                     </article>
                                     <span className="industry-tile">Retail</span>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="health">
+                                    <article className="tile is-child box" id="health" onClick={this.handlePreset}>
                                     </article>
                                     <span className="industry-tile">Health</span>
                                 </div>
@@ -126,22 +178,21 @@ class Home extends Component {
                             </div>
                             <div className="tile is-ancestor">
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="services">
+                                    <article className="tile is-child box" id="services" onClick={this.handlePreset}>
 
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="hotels">
+                                    <article className="tile is-child box" id="hotels" onClick={this.handlePreset}>
 
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id="entertainment">
+                                    <article className="tile is-child box" id="entertainment" onClick={this.handlePreset}>
                                     </article>
                                 </div>
                                 <div className="tile is-parent">
-                                    <article className="tile is-child box" id=
-                                    "shop">
+                                    <article className="tile is-child box" id="shop" onClick={this.handlePreset}>
                                     </article>
                                 </div>
                             </div>
