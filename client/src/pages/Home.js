@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Footer from "../components/Footer";
 import Results from "../components/Results";
 import {geolocated} from 'react-geolocated';
-import { Redirect } from 'react-router-dom'
+import { Redirect,withRouter } from 'react-router-dom'
 import  "../components/Industry/Industry.css";
 import "./Search.css";
 
@@ -21,7 +21,7 @@ class Home extends Component {
         API.checkAuth().then(data => {
             console.log(data.data);
             if(data.data.type === "fail"){
-                return (<Redirect to="/"/>)
+                this.props.history.push('/')
             }
         })
         setTimeout(()=>{   
