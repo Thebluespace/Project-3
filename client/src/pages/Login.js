@@ -61,9 +61,9 @@ class Login extends Component {
                         <source src="https://player.vimeo.com/external/287831458.sd.mp4?s=ea1c5ae2328fb88b03335bd198970d9736c271e7&profile_id=165" type="video/mp4" />
                     </video>
                     <h1 id="webtitle">WHO'S BAD?</h1>
-                    {this.state.error === "" ? (<div/>) : (<div><p>{this.state.error}</p></div>) }
                     {!this.props.match.params.id ? <div className="login">
                             <div className="level">
+                            {this.state.error === "" ? (<div/>) : (<div><p>{this.state.error}</p></div>) }
                                 <div className="notification">
                                     <div className="field">
                                         <p className="control has-icons-left has-icons-right">
@@ -99,6 +99,7 @@ class Login extends Component {
                             </div>
                         </div> : <div className="login">
                             <div className="level">
+                            {this.state.error === "" ? (<div/>) : (<div><p>{this.state.error}</p></div>) }
                                 <div className="notification">
                                     <div className="field">
                                         <p className="control has-icons-left has-icons-right">
