@@ -5,7 +5,7 @@ export default {
     return axios.post("/api/query",{"query":post,"location":location});
   },
   checkAuth: function(post,location) {
-    return axios.post("/api/checkauth",{"query":post,"location":location});
+    return axios.post("/api/checkauth", post);
   },
   uquery: function(post,location) {
     return axios.post("/api/uquery",{"query":post,"location":location});

@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from "../components/Footer";
 import Results from "../components/Results";
 import {geolocated} from 'react-geolocated';
+import { Redirect } from 'react-router-dom'
 import  "../components/Industry/Industry.css";
 import "./Search.css";
 
@@ -17,16 +18,17 @@ class Home extends Component {
         location: ""
     };
     componentDidMount = () =>{
-        console.log(API.checkAuth());
+        var type = API.checkAuth();
+        console.log(type);
+        if (type.type === "/home"){
+            return (<Redirect to="/home"/>)
+        }
         setTimeout(()=>{   
         var error = localStorage.getItem("error");
         var location = localStorage.getItem("location");
         this.setState({"location":location,"error":error});
         },3000);
     }
-
-
-
     myCallback = data =>{
         setTimeout(()=>{   
         localStorage.setItem("error",data.error);

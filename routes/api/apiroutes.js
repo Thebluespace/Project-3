@@ -163,10 +163,10 @@ router.post('/signup', (req, res) => {
       console.log(info);
       if (err) {
         console.log(err);
-        return res.json({ error: err.message });
+        return res.json({ "type": err.message });
       } else {
         if (!user) {
-          return res.json({ error: info.message });
+          return res.json({ "type": info.message });
         } else {
           req.login(user, err => {
             if (err) {
@@ -174,7 +174,7 @@ router.post('/signup', (req, res) => {
               return res.json({ error: err.message });
             }
             console.log("account created successfully");
-            res.json({ redirect: "/home" });
+            res.json({ "type": "success" });
           });
         }
       }
@@ -186,7 +186,7 @@ router.get("/checkAuth", isLoggedIn, (data) => {
 })
 router.get('/logout',(req,res) => {
     req.session.destroy(function(err) {
-        res.redirect('/');
+        res.json({"type":"success"});
     });
 });
   
