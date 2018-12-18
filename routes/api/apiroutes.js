@@ -181,7 +181,7 @@ router.post('/signup', (req, res) => {
     })(req, res)
 });
   
-router.get("/checkAuth", isLoggedIn, (data) => {
+router.get("/checkauth", isLoggedIn, (data) => {
     console.log(data);  
 })
 router.get('/logout',(req,res) => {
