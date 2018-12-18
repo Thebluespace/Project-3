@@ -28,6 +28,8 @@ class Login extends Component {
             console.log(data.data);
             if(data.data.type === "success"){
                 this.props.history.push('/home')
+            } else {
+                this.setState({"error" : data.data.type});
             }
         }).catch(err => console.log(err));
         }
@@ -43,6 +45,8 @@ class Login extends Component {
             console.log(data.data);
             if(data.data.type === "success"){
                 this.props.history.push('/home')
+            } else {
+                this.setState({"error" : data.data.type});
             }
          }).catch(err => console.log(err));
         }
