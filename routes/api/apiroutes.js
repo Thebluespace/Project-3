@@ -182,7 +182,7 @@ router.post('/signup', (req, res) => {
 });
   
 router.get("/checkAuth", isLoggedIn, (data) => {
-    console.log(data);
+    console.log(data);  
 })
 router.get('/logout',(req,res) => {
     req.session.destroy(function(err) {

@@ -116,7 +116,7 @@ class Login extends Component {
                                     <div className="signUpbtn" />
                                     <div className="field is-grouped">
                                         <p className="control id=signup">
-                                            <a className="button is-primary" id="submit" href="/signup">
+                                            <a className="button is-primary" id="submit" onClick={this.handleSignup}>
                                                 Submit
                                             </a>
                                         </p>
