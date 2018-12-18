@@ -2,15 +2,14 @@ import React, { Component } from "react";
 import { Redirect,withRouter } from 'react-router-dom'
 import API from "../utils/API.js";
 import "./Login.css";
-import Signin from "../components/SignIn/Signin";
-import User from "../components/User/User";
 class Login extends Component {
 
     state = {
         email: "",
         password: "",
         phone: "",
-        location: ""
+        location: "",
+        error: ""
     }
     handleInputChange = event => {
         const name = event.target.name;
@@ -78,6 +77,7 @@ class Login extends Component {
                                             </span>
                                         </p>
                                     </div>
+                                    {this.state.error === "" ? (<div/>) : (<div><p>{this.state.error}</p></div>) }
                                     <div className="loginbtn" />
                                     <div className="field is-grouped">
                                         <p className="control">
@@ -123,7 +123,7 @@ class Login extends Component {
                                             </span>
                                         </p>
                                     </div>
-
+                                    {this.state.error === "" ? (<div/>) : (<div><p>{this.state.error}</p></div>) }
                                     <div className="signUpbtn" />
                                     <div className="field is-grouped">
                                         <p className="control id=signup">

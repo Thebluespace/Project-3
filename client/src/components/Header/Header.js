@@ -18,7 +18,7 @@ const Header = props => (
                 {/* </div> */}
                 <button id="location"><i className="fas fa-map-marker-alt"></i></button>
                 <div className="navbar-end" id="nav-btn">
-                    <a href="/api/signout"><i className="fas fa-sign-out-alt"></i></a>
+                    <a href="/api/logout"><i className="fas fa-sign-out-alt"></i></a>
                     <a href="/"><i className="fas fa-home"></i></a>
                 </div>
             </nav>
