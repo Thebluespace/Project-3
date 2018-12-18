@@ -166,7 +166,7 @@ router.post('/signup', (req, res) => {
         return res.json({ error: err.message });
       } else {
         if (!user) {
-          return res.send({ error: info.message });
+          return res.json({ error: info.message });
         } else {
           req.login(user, err => {
             if (err) {
