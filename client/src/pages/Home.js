@@ -20,7 +20,7 @@ class Home extends Component {
     componentDidMount = () =>{
         var type = API.checkAuth();
         console.log(type);
-        if(type.type === fail){
+        if(type.type === "fail"){
             return (<Redirect to="/"/>)
         }
         setTimeout(()=>{   
