@@ -41,7 +41,7 @@ class Login extends Component {
                                 <div className="notification">
                                     <div className="field">
                                         <p className="control has-icons-left has-icons-right">
-                                            <input className="input" type="email" onChange={handleInputChange} placeholder=" Email" />
+                                            <input className="input" type="email" onChange={this.handleInputChange} placeholder=" Email" />
                                             <span className="icon is-small is-left">
                                                 <i className="fas fa-envelope fa-1x"></i>
                                             </span>
@@ -52,7 +52,7 @@ class Login extends Component {
                                     </div>
                                     <div className="field">
                                         <p className="control has-icons-left">
-                                            <input className="input" type="password" onChange={handleInputChange} placeholder=" Password" />
+                                            <input className="input" type="password" onChange={this.handleInputChange} placeholder=" Password" />
                                             <span className="icon is-small is-left">
                                                 <i className="fas fa-lock fa-1x "></i>
                                             </span>
@@ -61,7 +61,7 @@ class Login extends Component {
                                     <div className="loginbtn" />
                                     <div className="field is-grouped">
                                         <p className="control">
-                                            <a className="button is-primary" onClick={handleLogin}>
+                                            <a className="button is-primary" onClick={this.handleLogin}>
                                                 Login</a>
                                         </p>
                                         <div className="signUpbtn" />
@@ -76,7 +76,7 @@ class Login extends Component {
                                 <div className="notification">
                                     <div className="field">
                                         <p className="control has-icons-left has-icons-right">
-                                            <input className="input" type="email" onChange={handleInputChange} placeholder=" Email" />
+                                            <input className="input" type="email" onChange={this.handleInputChange} placeholder=" Email" />
                                             <span className="icon is-small is-left">
                                                 <i className="fas fa-envelope fa-1x"></i>
                                             </span>
@@ -88,7 +88,7 @@ class Login extends Component {
 
                                     <div className="field">
                                         <p className="control has-icons-left">
-                                            <input className="input" type=" password" onChange={handleInputChange} placeholder=" Password" />
+                                            <input className="input" type=" password" onChange={this.handleInputChange} placeholder=" Password" />
                                             <span className="icon is-small is-left">
                                                 <i className="fas fa-lock fa-1x"></i>
                                             </span>
@@ -97,7 +97,7 @@ class Login extends Component {
 
                                     <div className="field">
                                         <p className="control has-icons-left">
-                                            <input className="input" type=" phone number" onChange={handleInputChange} placeholder=" Mobile" />
+                                            <input className="input" type=" phone number" onChange={this.handleInputChange} placeholder=" Mobile" />
                                             <span className="icon is-small is-left">
                                             <i className="fas fa-phone fa-1x"></i>
                                             </span>
